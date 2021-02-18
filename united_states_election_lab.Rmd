@@ -1,0 +1,75 @@
+---
+title: 'Lab 1: United States 2020 Elections'
+author: "Fill in your names!"
+date: "Fill in the date!"
+output:
+  bookdown::pdf_document2: default
+
+---
+
+```{r load packages and set options, include=FALSE}
+
+```
+
+```{r load data, echo = FALSE, message = FALSE}
+
+```
+
+```{r clean and tidy data, echo = FALSE, message = FALSE}
+
+```
+
+```{r select data for analysis, echo = FALSE, message = FALSE}
+
+```
+
+
+\clearpage 
+
+# Question 2: Are people warmer toward Black Lives Matter or the MeToo movement in 2020? 
+
+## Importance and context
+<!-- You can (and should delete each of these comments lines in your final report) --> 
+
+## Description of data
+<!-- Not only the data that you use, but why this is the most reasonable data _to_ use --> 
+<!-- What is the data like before you make any changes to it --> 
+<!-- What changes do you make to the data and why? --> 
+<!-- What does the data look like after you've made these changes to it --> 
+
+## Most appropriate test 
+<!-- What is the most appropriate test for you to conduct to answer the question at hand? --> 
+<!-- What is the null hypothesis for this test, and what would it mean to reject this null --> 
+<!-- What, if any, are the limitations to the test? --> 
+
+## Test, results and interpretation
+<!-- What test do you conduct --> 
+<!-- What are the results of this test? --> 
+<!-- What do the results of this test mean? What is the practical significance --> 
+<!-- What, if any, of the requirements that the test places on the data are not met --> 
+<!-- What does it mean for the data to fail to meet these requirements --> 
+
+\clearpage 
+
+# Question 3: Misinformation about COVID-19
+
+## Importance and context
+<!-- You can (and should delete each of these comments lines in your final report) --> 
+
+## Description of data
+<!-- Not only the data that you use, but why this is the most reasonable data _to_ use --> 
+<!-- What is the data like before you make any changes to it --> 
+<!-- What changes do you make to the data and why? --> 
+<!-- What does the data look like after you've made these changes to it --> 
+
+## Most appropriate test 
+<!-- What is the most appropriate test for you to conduct to answer the question at hand? --> 
+<!-- What is the null hypothesis for this test, and what would it mean to reject this null --> 
+<!-- What, if any, are the limitations to the test? --> 
+
+## Test, results and interpretation
+<!-- What test do you conduct --> 
+<!-- What are the results of this test? --> 
+<!-- What do the results of this test mean? What is the practical significance --> 
+<!-- What, if any, of the requirements that the test places on the data are not met --> 
+<!-- What does it mean for the data to fail to meet these requirements --> 
