@@ -23,10 +23,47 @@ output:
 
 ```
 
+\clearpage 
+# Election Fraud? 
+## Problem Setup 
+
+In December 2020 the United States' Supreme Court received expert witness testimonial -- based on statistical work. *What you have learned this week is quite literally a decision that was before the highest court in the nation*. 
+
+Dr. Charles J. Cicchetti -- a managing director at the Berkeley Research Group (which we'll be very quick to point out is not afficiliated with the University of California, Berkeley), a former professor at UW-Madison, former deputy director of the *Energy and Environmental Policy Center* at Harvard, a former chaired professor at USC, and an author of more than 20 books -- provided expert witness testimonial to the Court. Dr. Cicchetti's augment was based on statistical reasoning about truthfully reported data. Your task is to evaluate the nature of Dr. Cicchetti's reasoning, his statistical tests, and subsequent conclusions. 
+
+## The Plaintif's Claims 
+
+In this case, the plaintiffs (in the US these are the individuals who bring a suit alleging harm or breach of law) argued that the determination by the states of Pennsylvania, Georgia, Michigan and Wisconsin to allow expanded vote-by-mail options in response to COVID-19 raised the possibility for fraud, and thereby compromised the election process to select either the 46th US president, or confirm the 45th president for a second term in office. 
+
+United States' law requires fact to support claims and allegations. [Hearsay](https://en.wikipedia.org/wiki/Hearsay_in_United_States_law) is not permissible as evidence in the court, nor is speculation. And so, the plaintiffs to the case elicited the [expert witness](https://en.wikipedia.org/wiki/Expert_witness) testimonial of Dr. Cicchetti to provide expert evidence which is, quite literally, the evidence that is used in deciding the case. 
+
+## Opposing Council 
+
+This case does not present a question of the law, which is the usual purview of the Court. Instead, this is a question of fact which has reached the court through the Court's [*Original Jurisdiction*](https://www.fjc.gov/history/courts/jurisdiction-original-supreme-court) in cases between states. As a result, the task at hand is relatively less complicated than evaluating the corpus of established Constitutional law -- it is simply to evaluate the facts that are presented in the case. 
+
+1. What is the core claim (or claims) that the plaintiffs make in the case? 
+
+> 
+
+2. What is a reasonable null hypothesis in an a case of this importance? What is a reasonable alternative hypothesis? 
+
+> 
+
+3. Be as critical as you can (you're opposing council, after all!) of the match between the claim made by the plaintiff's expert witness and the statistical test that is proposed. Is the language of the argument narrow enough that it works well as a statistical test? Why or why not? 
+
+>
+
+4. What would be the *ideal* evidence in support of this claim? Engage in the blue sky exercise of imagining the data that would, [beyond a reasonable doubt](https://en.wikipedia.org/wiki/Reasonable_doubt) support the core claim of the plaintiffs. If this evidence -- if this **data** -- were present, would it be possible for a reasonable person to *fail* to reach the same conclusion as the plaintiffs in the case? Why or why not? 
+
+> 
+
+5. What evidence is presented in support of the plaintiff's claims? For any claim that you have identified, would it be possible for a reasonable person to *fail* to reach the same conclusion as the plaintiffs in the case? Why or why not? 
+
+> 
 
 \clearpage 
 
-# Question 2: Are people warmer toward Black Lives Matter or the MeToo movement in 2020? 
+# Are people warmer toward Black Lives Matter or the MeToo movement in 2020? 
 
 ## Importance and context
 <!-- You can (and should delete each of these comments lines in your final report) --> 
@@ -51,7 +88,7 @@ output:
 
 \clearpage 
 
-# Question 3: Misinformation about COVID-19
+# Misinformation about COVID-19
 
 ## Importance and context
 <!-- You can (and should delete each of these comments lines in your final report) --> 

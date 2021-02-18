@@ -12,8 +12,6 @@ You will note that there are two forms of data that are avaiable, data that is s
 
 While you're at the ANES website, you will also want to download the codebook, because all of the variables are marked as something like, `V200002` -- which isn't very descriptive without the codebook. 
 
-# Question 1 Guidance 
-
 # Question 2 Guidance 
 
 - There are two related *Feeling Thermometer* questions about social justice, one about Black Lives Matter movement, and another about the #MeToo movement. 
