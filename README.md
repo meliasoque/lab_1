@@ -8,7 +8,7 @@ Data for the lab should be drawn from the 2020 American National Election Studie
 
 To access the data, you will need to register for an account, confirm this account, and then login. The data that you should come from the **2020 Time Series Study**. We're asking you to collect this data from source, because we don't want to take this important part of the process away from you. 
 
-You will note that there are two forms of data that are avaiable, data that is stored in a `.dta` format, and data that is stored in a `.sav` format. Both of these are proprietary data formats (`.dta` for STATA, and `.sav` for SPSS). To read this data in R will require that you use the library(`foreign`) and the appropriate `read_*` call for the data. 
+You will note that there are two forms of data that are avaiable, data that is stored in a `.dta` format, and data that is stored in a `.sav` format. Both of these are proprietary data formats (`.dta` for STATA, and `.sav` for SPSS). To read this data in R will require that you use the library(`haven`) and the appropriate `read_*` call for the data. 
 
 While you're at the ANES website, you will also want to download the codebook, because all of the variables are marked as something like, `V200002` -- which isn't very descriptive without the codebook. 
 
