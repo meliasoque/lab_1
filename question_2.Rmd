@@ -21,9 +21,8 @@ library(ggplot2)
 
 ## Description of Data
 <!-- Explain how your research question is operationalized, including whether the variables you create are appropriate to study the concepts in question. --> 
-<!-- What is the data like before you make any changes to it --> 
+<!-- What are some basic features of the data distribution? --> 
 <!-- What changes do you make to the data and why? --> 
-<!-- What does the data look like after you've made these changes to it --> 
 
 ## Most appropriate test 
 <!-- Explain which test is the most appropriate to answer your question and why it is the most appropriate --> 
@@ -31,6 +30,4 @@ library(ggplot2)
 
 ## Test, results and interpretation
 <!-- What are the results of your test? --> 
-<!-- What do the results of this test mean? What is the practical significance --> 
-<!-- Which, if any, of the assumptions that the test requires may be violated? --> 
-<!-- What are the implications of those violations? --> 
+<!-- What do the results of this test mean? What is the practical significance? --> 
