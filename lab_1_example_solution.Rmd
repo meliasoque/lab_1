@@ -1,5 +1,5 @@
 ---
-title: "Lab 1: Comparing Means"
+title: "Lab 1: Fear and Anger as a Motivator"
 author: 'w203: Statistics for Data Science'
 output:
   bookdown::pdf_document2: default
@@ -16,8 +16,7 @@ theme_set(theme_bw())
 options(tinytex.verbose = TRUE)
 ```
 
-
-```{r load data, message = FALSE}
+```{r load data, echo = FALSE, message = FALSE}
 anes <- read_csv("anes_pilot_2018.csv")
 ```
 
@@ -47,28 +46,29 @@ anes <- anes %>%
   )
 ```
 
-# Was anger or fear more effective at driving increases in voter turnout from 2016 to 2018?
+# Did Fear or Anger Drive Turnout in 2016? 
 
-The 2016, 2018 (and now 2020) elections have been remarkable for their acrimony. Language has changed from referring to the electoral contests in terms of "horse races" to instead be in terms of "battles", "wars" and "conflict". In the Senate, once referred to as a bastion of collegiality, Senators have removed the filibuster -- referred to rather hyperbolically as using the "nuclear option" -- have refused to extend senatorial courtesy on judicial appointments. And, in the 2020 election cycle appointed a justice to the supreme court only weeks before the presidential general election. 
+## Importance and Context
+
+Was fear or anger more effective at causing voters to turn out in the 2018 election? 
+
+The 2016, 2018 (and now 2020) elections have been remarkable for their acrimony. Language has changed from referring to the electoral contests in terms of "horse races" to instead be in terms of "battles", "wars" and "conflict". In the Senate, once referred to as a bastion of collegiality, Senators have removed the filibuster -- referred to in rather hyperbolic terms as using the "nuclear option" -- have refused to extend senatorial courtesy on judicial appointments. And, in the 2020 election cycle appointed a justice to the supreme court only weeks before the presidential general election. 
 
 Needless to say, fear of the future and anger about the present have play a key part in parties' attempts to turn out voters. But, is one more effective at bringing individuals to the polls? 
 
-One of the challenges of this question is that there are many ways that one could attempt to answer, given this data, but none are really satisfactory. In its ideal form, answering this question would require us to actually conduct an experiment that might take the following form: 
+## Description of Data
 
-> Among voters who did not turn out in the 2016 election, randomly assign individuals to receive either fear or anger inducing messaging. 
+In its ideal form, answering this question would require us to actually conduct an experiment that might take the following form: 
 
-Here is why. Even after a complete analysis of this data, it will not be possible to know why people chose *not* to vote in the 2016 election. Perhaps someone chose not to vote in the 2016 election because they were angry. Or, perhaps a citizen  chose *to* vote because of their anger in the 2016 election. 
+> Among voters who did not turn out in the 2016 election, partner with CBS to randomly assign individuals to receive either fear or anger inducing campaign advertising messaging. Then, among these voters, measure the rate of turnout in the 2020 election. 
 
-There is another *major* confounder in this question -- rates of turnout in midterm general elections are typically much lower than turnout in presidential general elections. And so, relatively high (or low) levels of turnout could be generated either by the fear, anger, or general interest in participating in an election for the office of the president. This confound becomes particularly acute because the 45th president pervasibely used both fear and anger inducing language in their campaign. As a result, there is a tight coupling of language and office that makes this an **extraordinarily** difficult question to answer. 
-
-Further complicating this issue is the measurement strategy that assesses whether individuals voted in 2016. The ANES here asks individuals to retrospectively evaluate whether they voted. This task is both difficult, and subject to an acute "social desirability bias" -- there is a strong norm that voting is a civic duty and so individuals may over-report past voting.
+This experiment is necessary for two reasons. First, even after an appropriate analysis of the data on hand, it is not possible to know why people chose to **not**  vote in the 2016 election. Perhaps someone chose not to vote in the 2016 election because they were angry. Or, perhaps a citizen  chose *to* vote because of their anger in the 2016 election. This possiblity is a confounder that cannot be addressed with the limited data that is available from the ANES. Second, rates of turnout in midterm general elections are typically much lower than turnout in presidential general elections. Consequently, relatively high (or low) levels of turnout in the midterm could be generated either by the fear, anger, or general interest in participating in an election for the office of the president. Making this confound particularly acute is the 45th president's pervasive use of both fear and anger inducing language in their campaign. As a result, there is a tight coupling of language and office that makes this an **extraordinarily** difficult question to answer. 
 
 ```{r, echo = FALSE}
 number_of_rows <- anes %>% 
   filter(voted_2016 == 'Did not Vote') %>% 
   nrow()
 ```
-
 
 A final limitation is the amount of data available to use in this form of test. After filtering, the test will have only `r number_of_rows`. Nevertheless, we soldier on! 
 
@@ -78,6 +78,8 @@ As we report in Table \@ref(tab:summary-table), 70% of ANES respondents report t
 summary_table <- anes %$% 
   prop.table(table('Voted in 2016' = voted_2016, 'Voted in 2018' = voted_2018))
 ```
+
+Data is reported on a 5-point Likert scale that ranges from 1 (lest amount of motivation) to 5 (most amount of motivation), and the same question is asked to each respondent. 
 
 ```{r summary-table, echo = FALSE}
 kable(
@@ -105,7 +107,9 @@ The first thing to note in this data is that there are differences in the rank o
 
 ```{r describe-fear-anger, echo = FALSE}
 describe_fear_anger <- anes %>% 
-  filter(voted_2016 == 'Did not Vote') %>% 
+  filter(
+    voted_2016 == 'Did not Vote', 
+    voted_2018 == 'Voted') %>% 
   select(geangry, geafraid) %>% 
   pivot_longer(cols = c(geangry, geafraid)) %>% 
   mutate(
@@ -121,24 +125,27 @@ describe_fear_anger <- anes %>%
   theme(legend.position = 'bottom', legend.box = 'horizontal')
 ```
 
+```{r, echo=FALSE}
+fear_anger_difference <- anes %>% 
+  filter(
+    voted_2016 == 'Did not Vote',
+    voted_2018 == 'Voted') %>% 
+  select(geangry, geafraid) %>% 
+  mutate(fraidy_cat = geafraid - geangry) %>% 
+  ggplot() + 
+    aes(x = fraidy_cat) + 
+    geom_histogram(bins = 10) + 
+    labs(x = 'Fear - Anger')
+```
+
 
 ```{r plots, message = FALSE, echo = FALSE, fig.cap='Voter Emotions and Feelings'}
-fear_anger | describe_fear_anger
+(fear_anger) | (describe_fear_anger / 
+                  fear_anger_difference ) 
 ```
 
-```{r wilcox test, echo = TRUE} 
-wilcox_test <- anes %>% 
-  filter(voted_2016 == 'Did not Vote') %$% 
-  wilcox.test(x = geangry, y = geafraid, paired = TRUE)
-```
-
-Despite this pattern, a paired test suggests that these differences could be a product of sampling, with a p-value of `r round(wilcox_test$p.value, 2)`. 
-
-To test whether fear or anger was more effective at motivating people to vote in 2018 I conduct the following test: 
-
-- I limit the data to individuals who did not vote in 2016; 
-- I compute the difference between individual's reported anger and fear 
-- Then, I test whether this anger/fear differential is measurably different between 2018 voters and non-voters. 
+## Most appropriate test 
+To test whether fear or anger was more effective at motivating people to vote in 2018 I conduct the following test: I limit the data to individuals who did not vote in 2016 and then test whether the rank ordering of respondents' motivations for voting are equal. The most appropriate test for this question, with this data, is a Mann-Whitney (or paired Wilcoxon) rank test. The data is generated through an iid sample and is ranked (i.e. ordinal) data, which precludes using a test that requires metric data (i.e. a paired t-test). 
 
 Although this feels like the most appropriate test I can construct here, there are several points where the ways the data are measured generate challenges for use. 
 
@@ -146,11 +153,15 @@ First, data is reported in a 5 point, ordinal scale. There is no reason to belie
 
 If this test were to **reject the null hypothesis** I would conclude that among those voters who did not vote in 2016, those who vote in 2018 have a measurably different anger/fear differential compared to those who did not vote in 2018. If the test were to **fail to reject the null hypothesis** then I would conclude that either there is not enough data, the hypothesized effect does not exist, or the test was inappropriate to conduct against data collected in this manor. 
 
-```{r t-test, echo = TRUE}
-anes %>% 
-  filter(voted_2016 == 'Did not Vote') %>% 
-  mutate(anger_fear_difference = geangry - geafraid) %$% 
-  t.test(anger_fear_difference  ~ voted_2018)
+```{r wilcox test, echo=TRUE} 
+wilcox_test <- anes %>% 
+  filter(
+    voted_2016 == 'Did not Vote', 
+    voted_2018 == 'Voted') %$% 
+  wilcox.test(x = geangry, y = geafraid, paired = TRUE)
+wilcox_test
 ```
 
-This test provides no evidence of a fear/anger differential between voters and non-voters in the 2018 election.
+This test suggests that there is not enough evidence to conclude that there is a difference in anger or fear among people who did not vote in 2016; indeed, the p-value for the test is `r round(wilcox_test$p.value, 2)`, which is well outside the rejection range. In many ways, we anticipated the results of this test from the distributions of data that are reported in Figure 1. While there is a positive association between fear and anger shown in the scatter plot the histogram also shows that the distribution of differences is remarkably symmetric about zero. 
+
+And so, while the rhetoric of the former President may have raised the levels of fear and anger in the national political dialogue, there is no evidence that, among those who failed to vote in 2016 but did vote in 2018 one of these emptions was more prevalent than another. 
