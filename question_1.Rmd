@@ -2,8 +2,18 @@
 title: 'Lab 1: Question 1'
 author: "Your Names Here"
 output: pdf_document
-
 ---
+
+```{r load packages, echo=TRUE, warning=FALSE, message=FALSE}
+library(dplyr)
+library(ggplot2) 
+# library(tidyverse) # if you want more, but still core, toolkit
+```
+
+```{r load and clean data, echo=FALSE, warning=TRUE, message=FALSE}
+
+```
+
 
 ## Importance and Context
 <!-- You can (and should delete each of these comments lines in your final report) --> 
