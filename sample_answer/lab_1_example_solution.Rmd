@@ -149,7 +149,7 @@ To test whether fear or anger was more effective at motivating people to vote in
 
 Although this feels like the most appropriate test I can construct here, there are several points where the ways the data are measured generate challenges for use. 
 
-First, data is reported in a 5 point, ordinal scale. There is no reason to believe that respondents are using the same scale when they think about fear and anger. Another way of noting this is to ask whether voters hold the same anchoring points on these scales. Second, because these are ordinal scales, there are real problems with computing a difference score between two ordinal variables. Third, this data is only to voters who did not vote in the 2016 election; but, the data does not possess any solid information about why they did not vote in 2016. 
+First, data is reported in a 5 point, ordinal scale. There is no reason to believe that respondents are using the same scale when they think about fear and anger. Another way of noting this is to ask whether voters hold the same anchoring points on these scales. Second, this data is only to voters who did not vote in the 2016 election; but, the data does not possess any solid information about why they did not vote in 2016. 
 
 If this test were to **reject the null hypothesis** I would conclude that among those voters who did not vote in 2016, those who vote in 2018 have a measurably different anger/fear differential compared to those who did not vote in 2018. If the test were to **fail to reject the null hypothesis** then I would conclude that either there is not enough data, the hypothesized effect does not exist, or the test was inappropriate to conduct against data collected in this manor. 
 
