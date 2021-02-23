@@ -54,7 +54,7 @@ Was fear or anger more effective at causing voters to turn out in the 2018 elect
 
 The 2016, 2018 (and now 2020) elections have been remarkable for their acrimony. Language has changed from referring to the electoral contests in terms of "horse races" to instead be in terms of "battles", "wars" and "conflict". In the Senate, once referred to as a bastion of collegiality, Senators have removed the filibuster -- referred to in rather hyperbolic terms as using the "nuclear option" -- have refused to extend senatorial courtesy on judicial appointments. And, in the 2020 election cycle appointed a justice to the supreme court only weeks before the presidential general election. 
 
-Needless to say, fear of the future and anger about the present have play a key part in parties' attempts to turn out voters. But, is one more effective at bringing individuals to the polls? 
+Needless to say, fear of the future and anger about the present have play a key part in parties' attempts to turn out voters. But, is one more effective at bringing individuals to the polls? The answer to this question could provide guidance to future political campaigns hoping to increase voter turnout. It could also provide useful background for governments that are interested in maximizing civic participation.  A better understanding of the factors that polarize society, and how they express themselves through the voting process, may also help those hoping to counteract that polarization.
 
 ## Description of Data
 
