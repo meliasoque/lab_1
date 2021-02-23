@@ -58,7 +58,7 @@ Needless to say, fear of the future and anger about the present have play a key 
 
 ## Description of Data
 
-In its ideal form, answering this question would require us to actually conduct an experiment that might take the following form: 
+Because the research question is causal in nature, answering it in a convincing way would require us to conduct an experiment that might take the following form: 
 
 > Among voters who did not turn out in the 2016 election, partner with CBS to randomly assign individuals to receive either fear or anger inducing campaign advertising messaging. Then, among these voters, measure the rate of turnout in the 2020 election. 
 
