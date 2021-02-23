@@ -3,7 +3,6 @@ title: 'Lab 1: Hypothesis Testing'
 author: "w203 Teaching Team"
 output:
   pdf_document: default
-
 ---
 
 # Overview
@@ -47,9 +46,15 @@ For each of the three research questions, you will create a pdf created by a sep
 - Each report should be no more than 3 pages in standard latex formatting (i.e. `output: pdf_document`)
 - Follow the .Rmd template that we have created for each question, using the prompts to guide you through the parts of an analysis.  Make sure you fill in each prompt with all information requested.
 - Each report should contain either a plot or a table that advances the argument. 
+
+## Introduction
+Begin each report with an introduction to motivate the analysis.
+
+- Introduce the topic area and explain why the research question is interesting.
+- The introduction must "do work," connecting the general topic to the specific techniques in the report.
   
 ## Visual Design
-Any plots or tables that you include must follow basic principles of visual design.  In particular: 
+Any plots or tables that you include must follow basic principles of visual design.
 
 - A plot/figure must have a title that is informative.
 - Variables must be labeled in plain language. As an example, `v20002` does not work for a label.
@@ -62,13 +67,18 @@ To answer each research question, you will have to clean, tidy, and structure th
 
 - The code to wrangle data should be included in your report `.Rmd` file, but should not be shown in your final report. To accomplish this, you can use an `echo=FALSE` argument for the code chunk that does the wrangling. 
 - While we do not want to prohibit you from using additional tools for data manipulation, you should be able to complete this lab with no more than the base `stats` library, plus `dplyr` and `ggplot2` for data manipulation and plotting. Other tools within the tidyverse are available to use, but don't feel like you have to search them out. 
-- You can also Let this soft constraint empower you to write code yourself, rather than searching for a package that does *one thing* only for your report. 
+- You will learn more by writing your own function than you would searching for a package that does one thing for your report.
 
 ## Hypothesis Testing
-To answer each research question, you will have to execute one of the statistical tests that you have learned in the course.
+To answer each research question, you will have to execute one of the statistical tests from the course.
 
 - The code that executes your test *should* be shown in your report, because it makes very clear the specific test that you're conducting.
 - You need to argue, from the statistical principles of the course, why the test you are conducting is the *most appropriate* way to answer the research question. 
-- In making this argument, you need to list the assumptions/requirements of the data, and either reason or demonstrate that the data does, in fact, meet these requirements. 
-- Even after you make the argument that you have conducted the *most* appropriate test, there may be some requirements of the data that are not met. If these exist, please name them, and provide your interpretation of what the consequences are for your test results. 
+- In addition, list every assumption from your test, and evaluate whether the data generating process actually meets this assumption.
+- If you identify problems with some assumptions for your test, that does not mean that you should abandon the analysis or hide the problem. If these "limitations" exist, please describe them honestly, and provide your interpretation of the consequences for your test.
 - While you can choose to display the results of your test in the report, you also *certainly* need to write about these results. This should be accomplished using [inline code chunks](https://bookdown.org/yihui/rmarkdown-cookbook/r-code.html), rather than by hard-coding / hard-writing output into your written report. An example of this is included in `lab_1_example_solution.Rmd`. 
+
+## Test, results and interpretation
+
+- Discuss the practical significance of your results and include a measure of effect size appropriate to your variables.
+- Explain the main takeaway of your analysis and how it relates to the broader context you identified in the introduction.
