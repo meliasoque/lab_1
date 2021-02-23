@@ -70,7 +70,7 @@ number_of_rows <- anes %>%
   nrow()
 ```
 
-A final limitation is the amount of data available to use in this form of test. After filtering, the test will have only `r number_of_rows`. Nevertheless, we soldier on! 
+We will address this question using data from the 2018 American National Election Studies (ANES).  This is an observational dataset, based on a sample of respondents drawn from the Yougov platform.  After filtering, we will have `r number_of_rows` observations. 
 
 As we report in Table \@ref(tab:summary-table), 70% of ANES respondents report that they voted in both the 2016 and 2018 elections. While turnout of 75% might be expected in the presidential general, it is highly unlikely to have turnout this high in an off-cycle election. Also notable in this data is that voting (or not voting) seems to be highly durable -- only 10% of the respondents report taking a different action in 2016 compared to 2018. 
 
