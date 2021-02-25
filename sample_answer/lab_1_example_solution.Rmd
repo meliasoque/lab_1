@@ -173,7 +173,6 @@ The sign test requires the following assumptions to be true:
 
 - Ordinal scale. The data levels showing an increase in intensity from "not at all" to "extremely."  There is some question, however, as to whether participants use the same scale when they think about anger and fear. Another way of noting this is to ask whether voters hold the same anchoring points on these scales.
 
-If this test were to **reject the null hypothesis** I would conclude that among those voters who did not vote in 2016, those who vote in 2018 have a measurably different anger/fear differential compared to those who did not vote in 2018. If the test were to **fail to reject the null hypothesis** then I would conclude that either there is not enough data, the hypothesized effect does not exist, or the test was inappropriate to conduct against data collected in this manor. 
 
 ```{r binomial test, echo=TRUE} 
 binomial_test <- anes %>% 
