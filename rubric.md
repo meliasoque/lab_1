@@ -28,10 +28,10 @@
 
 ## Framing a Hypothesis (4 levels) 
 
-4. A report that scores full points on framing a hypothesis will have stated a null that is reasonable and can be (will be…) eventually tested with the data. The hypothesis will be clearly stated, and will have a strong argument that moves from the concept and/or theory directly into this particular hypothesis. 
-3. A report that scores three points will have stated a null that is sensible and testable. Keeping this hypothesis from scoring full points might be a small lack in the precision of the language; some gap between the argument/theory, data, and hypothesis, or some other small flaw that doesn’t jeopardize the overall validity of the framework, but keeps it from being wholly complete. 
-2. A report that scores two points will have stated a hypothesis, but it might be loosely related to the question at hand; unclear, or insufficiently precise to serve as a testing basis, or some other serious issue. 
-1. A report that scores a single point will have significant problems with how the null hypothesis is stated. Either it will be incorrectly stated as an alternative hypothesis; or, it will be unrelated to the question at hand; or some other major flaw. 
+4. A report that is scored in the top level on framing a hypothesis will have stated a null that is reasonable and can be (will be…) eventually tested with the data. The hypothesis will be clearly stated, and will have a strong argument that moves from the concept and/or theory directly into this particular hypothesis. 
+3. A report that is scored in the third level will have stated a null that is sensible and testable. Keeping this hypothesis from scoring full points might be a small lack in the precision of the language; some gap between the argument/theory, data, and hypothesis, or some other small flaw that doesn’t jeopardize the overall validity of the framework, but keeps it from being wholly complete. 
+2. A report that is scored in the sceond level will have stated a hypothesis, but it might be loosely related to the question at hand; unclear, or insufficiently precise to serve as a testing basis, or some other serious issue. 
+1. A report that is scored in the first level will have significant problems with how the null hypothesis is stated. Either it will be incorrectly stated as an alternative hypothesis; or, it will be unrelated to the question at hand; or some other major flaw. 
 
 ## Arguing for, and Assessing a Test (6 levels) 
 
