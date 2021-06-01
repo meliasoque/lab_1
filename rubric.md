@@ -2,10 +2,10 @@
 
 ## Introduction (4 levels) 
 
-4. An introduction that scores four points has very successfully made the case for the reader. It will have placed the specific question in context, connected the problem with the statistics and data that will be used, and have generally created a compelling case for continuing to read the report. 
-3. An introduction that scores three points has done a significant amount of successful work. The reader can place the topic area and the research question; understand and appreciate why this is a question that demands a data based answer. Keeping this introduction from a full, four-point score might be: small issues with writing, some lack of continuity in the argument, or some other such small issue that keeps this from being a wholly convincing introduction. 
-2. An introduction that scores two points has made some attempt to describe the problem and its importance, but it is missing significant parts of this argument. The language might be poorly chosen, the argument loosely formed, or the context left unexplained; there is considerable room for improvement. 
-1. An introduction that is scoring a single point either doesn’t exist, or has given a very cursory treatment for the setting of the question and why an answer based on statistics is necessary. 
+4. An introduction that is scored in the top level has very successfully made the case for the reader. It will have placed the specific question in context, connected the problem with the statistics and data that will be used, and have generally created a compelling case for continuing to read the report. 
+3. An introduction that scores in the third level has done a significant amount of successful work. The reader can place the topic area and the research question; understand and appreciate why this is a question that demands a data based answer. Keeping this introduction from a full, four-point score might be: small issues with writing, some lack of continuity in the argument, or some other such small issue that keeps this from being a wholly convincing introduction. 
+2. An introduction that scores in the second level has made some attempt to describe the problem and its importance, but it is missing significant parts of this argument. The language might be poorly chosen, the argument loosely formed, or the context left unexplained; there is considerable room for improvement. 
+1. An introduction that is scoring at the first level either doesn’t exist, or has given a very cursory treatment for the setting of the question and why an answer based on statistics is necessary. 
 
 ## Conceptualization and Operationalization (4 levels) 
 
