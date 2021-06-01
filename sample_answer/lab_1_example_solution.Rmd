@@ -72,7 +72,7 @@ We will address this question using data from the 2018 American National Electio
 
 As we report in Table \@ref(tab:summary-table), 70% of ANES respondents report that they voted in both the 2016 and 2018 elections. While turnout of 75% might be expected in the presidential general, it is highly unlikely to have turnout this high in an off-cycle election. Also notable in this data is that voting (or not voting) seems to be highly durable -- only 10% of the respondents report taking a different action in 2016 compared to 2018. 
 
-To examine factors behind voter turnout, I limit the data to individuals who did not vote in 2016, then switched to voting in 2018.  This group most closely represents a drive in turnout, and may hold the best clues about changing voter behavior.  After subsetting, we have `r number_of_rows` observations. 
+To examine factors behind voter turnout, this report limits the data to individuals who did not vote in 2016, then switched to voting in 2018.  This group most closely represents a drive in turnout, and may hold the best clues about changing voter behavior.  After subsetting, we have `r number_of_rows` observations. 
 
 ```{r make summary table, echo = FALSE} 
 summary_table <- anes %>% 
@@ -103,7 +103,7 @@ The survey includes questions about how angry and how afraid respondents "feel a
 
 Because our research question is fundamentally causal, answering it in a convincing way would require us to conduct an experiment that might take the following form. However, the ANES data is observational rather than experimental. Consequently, we recommend care in reasoning about whatever relationship this analysis might find. 
 
-There is a strong positive relationship between a survey respondent's answer to questions and fear and anger. In \@ref(fig:plots) I plot, the feelings of fear and anger among those who did not vote in 2016. This data is further broken out by whether the individual voted in 2018. Clearly, there is a strong positive relationship between these measures. Notably, there seems to be little difference between the relationship whether or not someone voted in 2018. 
+There is a strong positive relationship between a survey respondent's answer to questions and fear and anger. \@ref(fig:plots) plots the feelings of fear and anger among those who did not vote in 2016. This data is further broken out by whether the individual voted in 2018. Clearly, there is a strong positive relationship between these measures. Notably, there seems to be little difference between the relationship whether or not someone voted in 2018. 
 
 ```{r fear-anger, echo = FALSE, message=FALSE}
 fear_anger <- anes %>% 
@@ -163,22 +163,22 @@ more_angry_plot <- anes %>%
 (fear_anger) | (describe_fear_anger / 
                   more_angry_plot ) 
 ```
+## Hypothesis
+
+(Breaking the third wall -- this is actually a hard question to form a clear null hypothesis.) The question provided for this prompt asks whether fear or anger was more important in turning individuals out to vote. This is the type of statement that is appropriate for a newspaper article, but is quite difficult for a statistical test. The bottom-right panel displays the operationalization of the input variables -- a three category indicator for whether respondents were *more afraid*, *more angry*, or *equally angry and afraid*. The null hypothesis that we are testing is that there is no difference between the voter turnout rates between those who were more angry than those who were more afraid; missing from this analysis are those individuals who are equally angry as afraid. 
 
 ## Most appropriate test 
- I then test whether this subgroup reports being more angry or more afraid. Because these variables are measured on ordinal scales, a non-parametric test is appropriate.  Furthermore, the data is paired, since each individual has a pair of measurements.   Some researchers may use a signed-rank test in these circumstances, but that test, while technically non-parametric, requires data on a metric scale.  Instead, I will use a sign test, implemented in R using `binom.test`. 
 
-The sign test requires the following assumptions to be true:
+Anger and fear are both measured on ordinal scales, and so, in order to evaluate each emotion's motivation for voting, a non-parametric test is appropriate. Furthermore, the data is paired, since each individual has a pair of measurements. Some researchers may use a signed-rank test in these circumstances, but that test, while technically non-parametric, requires data on a metric scale.  Instead, I will use a sign test, implemented in R using `binom.test`. 
 
-- i.i.d. data.  The ANES 2018 pilot uses a panel of individuals that use YouGov.  This is an online system that rewards individuals for filling out surveys.  There is a possibility that this introduces dependencies.  For example, participants may tell friends or family members about YouGov, resulting in a cluster of individuals that give similar responses.  Nevertheless, YouGov claims to have millions of users, which suggests that links between individuals should be rare.
-
-- Ordinal scale. The data levels showing an increase in intensity from "not at all" to "extremely."  There is some question, however, as to whether participants use the same scale when they think about anger and fear. Another way of noting this is to ask whether voters hold the same anchoring points on these scales.
+The sign test requires the following assumptions to be true. First, data must be generated via an iid sampling process.  The ANES 2018 pilot uses a panel of individuals that use YouGov.  This is an online system that rewards individuals for filling out surveys.  There is a possibility that this introduces dependencies.  For example, participants may tell friends or family members about YouGov, resulting in a cluster of individuals that give similar responses.  Nevertheless, YouGov claims to have millions of users, which suggests that links between individuals should be rare. Second, the sign test requires that the data is measured on an ordinal scale (although interestingly, the test requires numeric data in the R implementation). The data levels showing an increase in intensity from "not at all" to "extremely."  There is some question, however, as to whether participants use the same scale when they think about anger and fear. Another way of noting this is to ask whether voters hold the same anchoring points on these scales.
 
 
 ```{r binomial test, echo=TRUE} 
 binomial_test <- anes %>% 
   filter(
     voted_2016 == 'Did not Vote', 
-    voted_2018 == 'Voted') %>% 
+    voted_2018 == 'Voted')  %>% 
   mutate(
     more_angry  = geangry > geafraid, 
     more_afraid = geafraid > geangry) %$% 
@@ -198,7 +198,7 @@ differences <- anes %>%
     more_afraid = geangry < geafraid)
 ```
 
-I fail to find evidence that there is a difference in anger or fear among people who did not vote in 2016; indeed, the p-value for the test is `r round(binomial_test$p.value, 2)`, which is well outside the rejection range. In many ways, we anticipated the results of this test from the distributions of data that are reported in Figure 1. While there is a positive association between fear and anger shown in the scatter plot the histogram also shows that the distribution of differences is remarkably symmetric about zero.
+This test does not produce enough evidence  that there is a difference in anger or fear among people who did not vote in 2016 to reject the null hypothesis. Indeed, the p-value for the test is `r round(binomial_test$p.value, 2)`, which is well outside the rejection range. In many ways, we anticipated the results of this test from the distributions of data that are reported in Figure 1. While there is a positive association between fear and anger shown in the scatter plot the histogram also shows that the distribution of differences is remarkably symmetric about zero.
 
 Although the test is negative, we briefly consider the effect size.  Among new voters who reported a difference in the two emotions, `r round(mean(differences$more_angry), 2)` reported feeling more angry and `r round(mean(differences$more_afraid), 2)`. This is a difference of `r (round(mean(differences$more_angry), 2) - round(mean(differences$more_afraid), 2)) * 100` percentage points. A difference of this size might typically be considered a small effect, but in a polarized electorate, even a small increase in message effectiveness may swing an election.  This points to the need for a larger sample or more powerful design to further assess this question.
 
