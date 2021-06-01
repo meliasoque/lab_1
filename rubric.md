@@ -52,8 +52,8 @@
 
 ## Overall Effect (3 leveles) 
 
-3.   A report that scores a full three points will have met expectations for professionalism in data-based writing, reasoning and argument for this point in the course. It can be presented, as is, to another student in the course, and that student could read, interpret and take away the aims, intents, and conclusions of the report. 
-2. A report that scores two points on overall effect will be largely professional; largely clearly written and structured; but will have some problem that inhibits the reader from being able to clearly reason from the report. 
-1. A report that scores a single point on overall effect will have significant issues in its presentation. These could be spelling, language, argument, formatting, or other issues that cause problems for the reader in their ability to read, evaluate, and take action on what is reported. 
+3.   A report that scores in the top level will have met expectations for professionalism in data-based writing, reasoning and argument for this point in the course. It can be presented, as is, to another student in the course, and that student could read, interpret and take away the aims, intents, and conclusions of the report. 
+2. A report that scores in the second level will be largely professional; largely clearly written and structured; but will have some problem that inhibits the reader from being able to clearly reason from the report. 
+1. A report that scores in the first level will have significant issues in its presentation. These could be spelling, language, argument, formatting, or other issues that cause problems for the reader in their ability to read, evaluate, and take action on what is reported. 
 
 
