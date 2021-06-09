@@ -5,8 +5,8 @@
 # Data Wrangling: Level 3
 # Summary Statistics and Data Context: Level 3
 # Framing a Hypothesis: Level 3
-# Arguing for and Assessing a Test: Level 3
-# Test Results: Level 3
+# Arguing for and Assessing a Test: Level 6
+# Test Results: Level 6
 # Overall Effect: Level 3
 
 
