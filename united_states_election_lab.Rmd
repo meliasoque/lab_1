@@ -34,7 +34,7 @@ For a glimpse into some of the intricacies that go into the design of this study
 The research question for each of the three parts of the lab are as follows:
 
 1. Are Democratic voters older or younger than Republican voters in 2020?
-2. Did Democratic voters or Republican voters report experiencing more difficulty voting in the 2020 election? (Bonus, ungraded question: Were the types of reported difficulties the same, or different for respondents who identify with the different parties?) 
+2. Did Democratic voters or Republican voters report experiencing more difficulty voting in the 2020 election? (Exploratory, ungraded question: Were the types of reported difficulties the same, or different for respondents who identify with the different parties? We're not going to grade this, and it isn't a fully formed question here, but you [like us] might be interested in exploring this while you're writing up your report.) 
 3. Are people who believe that science is is important for making government decisions about COVID-19 more likely to disapprove of the way their governor is handling the pandemic?
 
 # Guidance From Political Scientists 
