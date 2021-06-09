@@ -34,10 +34,18 @@ For a glimpse into some of the intricacies that go into the design of this study
 The research question for each of the three parts of the lab are as follows:
 
 1. Are Democratic voters older or younger than Republican voters in 2020?
-2. Are Democratic voters more enthusiastic about Joe Biden or Kamala Harris?
-3. Are survey respondents who have had someone in their home infected by COVID-19 more likely to disapprove of the way their governor is handling the pandemic?
+2. Did Democratic voters or Republican voters report experiencing more difficulty voting in the 2020 election? (Bonus, ungraded question: Were the types of reported difficulties the same, or different for respondents who identify with the different parties?) 
+3. Are people who believe that science is is important for making government decisions about COVID-19 more likely to disapprove of the way their governor is handling the pandemic?
+
+# Guidance From Political Scientists 
+
+This is beyond what we expect someone could know from the data or their background, so we'll share it here as guidance to students who are writing this report. Political identification in the US is a strange identity that loosely maps onto political ideology. While there is more written about this, see `./background_literature/petrocik_2009.pdf` as some guidance about how stated political identity might not match with revealed political identity at the ballot box. 
+
+As practical guidance, please treat individuals who "lean" in one direction or another as members of that party. This means that someone who "Leans Democratic" should be classified as as Democrat; and someone who "Leans Republican" should be classified as a Republican.
 
 # Report Guidelines 
+
+There is additional, specific guidance about testing in the Rubric. 
 
 ## General
 For each of the three research questions, you will create a pdf created by a separate source .Rmd file.
@@ -65,7 +73,8 @@ Any plots or tables that you include must follow basic principles of visual desi
 ## Data Wrangling 
 To answer each research question, you will have to clean, tidy, and structure the data (A.K.A. wrangle). 
 
-- The code to wrangle data should be included in your report `.Rmd` file, but should not be shown in your final report. To accomplish this, you can use an `echo=FALSE` argument for the code chunk that does the wrangling. 
+- The code to wrangle data should be included with your deliverable somehow. If you choose to include it in your report `.Rmd` file, then it not be shown in the PDF of your final report. To accomplish this, you can use an `echo=FALSE` argument for the code chunk that does the wrangling. 
+  - A better practice -- not strictly necessary for this lab -- would be to write a function that loads and cleans *all* of the data that is being used by your team for its reports. This way, a single function can be run (and evaluated by your reader) for all the loading, cleaning, and manipulating. 
 - While we do not want to prohibit you from using additional tools for data manipulation, you should be able to complete this lab with no more than the base `stats` library, plus `dplyr` and `ggplot2` for data manipulation and plotting. Other tools within the tidyverse are available to use, but don't feel like you have to search them out. 
 - You will learn more by writing your own function than you would searching for a package that does one thing for your report.
 
@@ -74,11 +83,12 @@ To answer each research question, you will have to execute one of the statistica
 
 - The code that executes your test *should* be shown in your report, because it makes very clear the specific test that you're conducting.
 - You need to argue, from the statistical principles of the course, why the test you are conducting is the *most appropriate* way to answer the research question. 
-- In addition, list every assumption from your test, and evaluate whether the data generating process actually meets this assumption.
+- Although you might not do this for a report at your organization, for this class please list every assumption from your test, and evaluate whether the data generating process actually meets this assumption.
 - If you identify problems with some assumptions for your test, that does not mean that you should abandon the analysis or hide the problem. If these "limitations" exist, please describe them honestly, and provide your interpretation of the consequences for your test.
 - While you can choose to display the results of your test in the report, you also *certainly* need to write about these results. This should be accomplished using [inline code chunks](https://bookdown.org/yihui/rmarkdown-cookbook/r-code.html), rather than by hard-coding / hard-writing output into your written report. An example of this is included in `lab_1_example_solution.Rmd`. 
 
 ## Test, results and interpretation
 
-- Discuss the practical significance of your results and include a measure of effect size appropriate to your variables.
-- Explain the main takeaway of your analysis and how it relates to the broader context you identified in the introduction.
+Please discuss whether any statistically significant results that you find are of *practical significance*. There are many ways to do this, but the best will provide your reader enough context to understand any measured differences in a scale appropriate to your variables. Explain the main takeaway of your analysis and how it relates to the broader context you identified in the introduction. 
+
+One way to self-assess whether you have succeeded in communicating the practical significance of any results that you find is to imagine that **all** results that you could possibly test would be statistically significant. If everything that you tested were significant, you would have to make an argument that *this particular* test either was (or was not) important within the broader context of the data.
