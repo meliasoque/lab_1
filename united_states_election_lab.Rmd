@@ -7,7 +7,7 @@ output:
 
 # Overview
 
-The American National Election Studies (ANES) conducts surveys of voters in the United States, with a flagship survey occurring immediately before and after each presidential election.  While the post-election data for 2020 is not yet available, pre-election data is available as a preliminary release.  In this lab, you will use the ANES data to answer questions about voters in the US.
+The American National Election Studies (ANES) conducts surveys of voters in the United States, with a flagship survey occurring immediately before and after each presidential election.  In this lab, you will use the ANES data to answer questions about voters in the US.
 
 This lab consists of three research questions.  For each question, your team will conduct a statistical analysis and generate a written report in pdf format.  This means that your team will create three separate reports, each one a complete analysis on its own.
 
