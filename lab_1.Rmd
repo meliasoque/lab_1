@@ -49,7 +49,7 @@ Your null hypothesis is that $p=1/2$.  You plan to reject the null if your test 
 For the following questions, your task is to evaluate the assumptions for the given test, using your background knowledge and examining the data.  The test may or may not be the most appropriate test for the scenario.  Do not perform the test.
 
 \begin{enumerate}
-\item The file Happiness\_WHR is subsetted from the World Happiness Report, a yearly publication that uses data from the Gallup World Poll surveys.  The variable life ladder is a measure of happiness, described in the FAQ as follows: 
+\item The file `datasets/Happiness\_WHR` is subsetted from the World Happiness Report, a yearly publication that uses data from the Gallup World Poll surveys.  The variable life ladder is a measure of happiness, described in the FAQ as follows: 
 
 \begin{quotation}\textit{This is called the Cantril ladder: it asks respondents to think of a ladder, with the best possible life for them being a 10, and the worst possible life being a 0. They are then asked to rate their own current lives on that 0 to 10 scale. The rankings are from nationally representative samples, for the years 2018-2020.}\end{quotation}
 
@@ -60,7 +60,7 @@ List all assumptions for a two-sample t-test and evaluate them.
 
 
 
-\item The file `legislators-current.csv` is taken from the congress-legislators project on Github (https://github.com/unitedstates/congress-legislators).  You would like to test whether Democratic or Republican senators are older.
+\item The file `datasets/legislators-current.csv` is taken from the congress-legislators project on Github (https://github.com/unitedstates/congress-legislators).  You would like to test whether Democratic or Republican senators are older.
 
 List all assumptions for a Wilcoxon rank-sum test and evaluate them.
 
@@ -72,7 +72,7 @@ List all assumptions for a signed-rank test and evaluate them.
 
 
 
-\item The file `GSS\_religion` is a subset of data from the 2004 General Social Survey (GSS).  The variables `prottemp` and `cathtemp` are measurements of how a respondent feels towards protestants and towards catholics, respectively.  The GSS questions are phrased as follows:
+\item The file `datasets/GSS\_religion` is a subset of data from the 2004 General Social Survey (GSS).  The variables `prottemp` and `cathtemp` are measurements of how a respondent feels towards protestants and towards catholics, respectively.  The GSS questions are phrased as follows:
 
 \begin{quotation}\textit{I'd like to get your feelings toward groups that are in the news these days. I will use something we call the feeling thermometer, and here is how it works: I'll read the names of a group and I'd like you to rate that group using the feeling thermometer. Ratings between 50 degrees and 100 degrees mean that you feel favorable and warm toward the group. Ratings between 0 degrees and 50 degrees mean that you don't feel favorable toward the group and that you don't care too much for that group. If we come to a group whose name you Don't recognize, you don't need to rate that group. Just tell me and we'll move on to the next one. IF you do recognize the name, but you don't feel particularly warm or cold toward the group, you would rate the group at the 50 degree mark. How would you rate this group using the thermometer?}\end{quotation}
 
