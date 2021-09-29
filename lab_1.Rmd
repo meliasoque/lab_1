@@ -122,7 +122,7 @@ As practical guidance, please treat individuals who "lean" in one direction or a
 There is additional, specific guidance about testing in the Rubric. 
 
 ## General
-For each of the three research questions, you will create a pdf created by a separate source .Rmd file.
+You should knit an .Rmd file to create your pdf report.
 
 - Your report should be no more than 3 pages in standard latex formatting (i.e. `output: pdf_document`)
 - You should assume your reader is familar with statitics, but has no special knowledge of the ANES survey.
@@ -157,7 +157,7 @@ To answer your research question, you will have to execute one of the statistica
 
 - The code that executes your test *should* be shown in your report, because it makes very clear the specific test that you're conducting.
 - You need to argue, from the statistical principles of the course, why the test you are conducting is the *most appropriate* way to answer the research question. 
-- Although you might not do this for a report at your organization, for this class please list every assumption from your test, and evaluate whether the data generating process actually meets this assumption.
+- Although you might not do this for a report at your organization, for this class please list every assumption from your test, and evaluate it (assess whether the assumption is a reasonable reflection of the natural process that generated the data).
 - If you identify problems with some assumptions for your test, that does not mean that you should abandon the analysis or hide the problem. If these "limitations" exist, please describe them honestly, and provide your interpretation of the consequences for your test.
 - While you can choose to display the results of your test in the report, you also *certainly* need to write about these results. This should be accomplished using [inline code chunks](https://bookdown.org/yihui/rmarkdown-cookbook/r-code.html), rather than by hard-coding / hard-writing output into your written report. An example of this is included in `lab_1_example_solution.Rmd`. 
 
@@ -165,6 +165,3 @@ To answer your research question, you will have to execute one of the statistica
 
 Please discuss whether any statistically significant results that you find are of *practical significance*. There are many ways to do this, but the best will provide your reader enough context to understand any measured differences in a scale appropriate to your variables. Explain the main takeaway of your analysis and how it relates to the broader context you identified in the introduction. 
 
-One way to self-assess whether you have succeeded in communicating the practical significance of any results that you find is to imagine that **all** results that you could possibly test would be statistically significant. If everything that you tested were significant, you would have to make an argument that *this particular* test either was (or was not) important within the broader context of the data.
-
-> kind of want to delete the last paragraph.  feels like double explaining what we already taught students.

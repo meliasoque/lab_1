@@ -53,11 +53,13 @@ anes <- anes %>%
 
 ## Importance and Context
 
-Was fear or anger more effective at causing voters to turn out in the 2018 election? 
+In the United States, the last decades have seen an increasingly polarized political climate. On a set of political questions measured by the Pew Research Center, the average partisan gap between liberals and conservatives has increased from 15 percentage points in 1994 to 36 percentage points in 2017 \footnote{Pew Research Center. "The partisan divide on political values grows even wider." (2017).}.  At the same time, national elections have been decided by increasingly narrow margins.  In both 2000 and 2016, the winner of the presidential election lost the popular vote - an event that hadn't occured previously since 1888. Responding to this environment, political campaigns have increasingly emphasized voter turnout as a way to winning elections. The question of how to motivate voters to show up at the polls has become crucial to political strategists, as well as commentators and researchers.
 
-The 2016, 2018 (and now 2020) elections have been remarkable for their acrimony. Language has changed from referring to the electoral contests in terms of "horse races" to instead be in terms of "battles", "wars" and "conflict". In the Senate, once referred to as a bastion of collegiality, Senators have removed the filibuster -- referred to in rather hyperbolic terms as using the "nuclear option" -- and have dropped even the slightest bit of comity by refusing to extend senatorial courtesy on judicial appointments. And, in the 2020 election cycle appointed a justice to the supreme court only weeks before the presidential general election. 
+This analysis contributes to the discussion of voter motivation, focusing on two emotions that frequently surface in discussions of the 2016 election: anger and fear. These two emotions are often cited in explaining voter behavior, and they are key targets that political advertisements are designed to play on.  While anger and fear often go hand in hand, they may differ in how well they motivate voter turnout, as well as how they contribute to the overall polarization of society.  As a first step, this analysis aims to address the following research question:
 
-Needless to say, fear of the future and anger about the present have play a key part in parties' attempts to turn out voters. But, is one more effective at bringing individuals to the polls? The answer to this question could provide guidance to future political campaigns hoping to increase voter turnout. It could also provide useful background for governments that are interested civic participation. A better understanding of the factors that polarize society, and how they express themselves through the voting process, may also help those hoping to counteract that polarization.
+\begin{quotation}\textit{Was fear or anger more effective at causing voters to turn out in the 2018 election?}\end{quotation}
+
+The answer to this question could provide guidance to future political campaigns hoping to increase voter turnout. It could also provide useful background for governments that are interested civic participation. A better understanding of the factors that polarize society, and how they express themselves through the voting process, may also help those hoping to counteract that polarization.
 
 ## Description of Data
 
@@ -68,9 +70,9 @@ number_of_rows <- anes %>%
   nrow()
 ```
 
-We will address this question using data from the 2018 American National Election Studies (ANES).  This is an observational dataset, based on a sample of respondents drawn from the YouGov platform. 
+Our analysis leverages data from the 2018 American National Election Studies (ANES).  This is an observational dataset, based on a sample of respondents drawn from the YouGov platform. 
 
-As we report in Table \@ref(tab:summary-table), 70% of ANES respondents report that they voted in both the 2016 and 2018 elections. While turnout of 75% might be expected in the presidential general, it is highly unlikely to have turnout this high in an off-cycle election. Also notable in this data is that voting (or not voting) seems to be highly durable -- only 10% of the respondents report taking a different action in 2016 compared to 2018. 
+As we report in Table \@ref(tab:summary-table), 70% of ANES respondents report that they voted in both the 2016 and 2018 elections. While turnout of 75% might be expected in the presidential general, it is highly unusual to have turnout this high in an off-cycle election. Also notable in this data is that voting (or not voting) seems to be highly consistent over time -- only 10% of the respondents report taking a different action in 2016 compared to 2018. 
 
 To examine factors behind voter turnout, this report limits the data to individuals who did not vote in 2016, then switched to voting in 2018.  This group most closely represents a drive in turnout, and may hold the best clues about changing voter behavior.  After subsetting, we have `r number_of_rows` observations. 
 
