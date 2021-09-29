@@ -1,5 +1,5 @@
 ---
-title: 'Lab 1: Question 1'
+title: 'Lab 1: Statistical Analysis'
 author: "Your Names Here"
 output: pdf_document
 ---
