@@ -147,22 +147,27 @@ describe_fear_anger <- anes %>%
 
 ```{r, echo=FALSE}
 more_angry_plot <- anes %>% 
-  filter(
-    voted_2016 == 'Did not Vote',
-    voted_2018 == 'Voted') %>% 
-  select(geangry, geafraid, emotions) %>% 
+  select(new_voter, emotions) %>% 
+  mutate(emotions_pretty =
+           case_when(
+             emotions == 'More Angry' ~ 'More Anger',
+             emotions == 'More Afraid' ~ 'More Fear',
+             T ~ 'Equal Emotion'
+           ),
+         emotions_pretty = factor(emotions_pretty, levels = c('More Anger', 'Equal Emotion','More Fear'))
+           ) %>% 
   ggplot() + 
-    aes(x = emotions) + 
-    geom_bar() + 
+    aes(x = emotions_pretty, y = new_voter) + 
+    geom_bar(stat="identity") + 
     labs(
-      x = NULL
+      x = NULL,
+      y = 'Fraction Voting for First Time'
     )
 ```
 
 
-```{r plots, message = FALSE, echo = FALSE, fig.cap='Voter Emotions and Feelings', fig.pos='!b'}
-(fear_anger) | (describe_fear_anger / 
-                  more_angry_plot ) 
+```{r plots, message = FALSE, echo = FALSE, fig.cap='Voter Emotions and Voter Turnout', fig.pos='!b', fig.height = 3}
+describe_fear_anger | more_angry_plot 
 ```
 
 The next figure plots the marginal distributions of respondents' feelings of fear and anger. While there are about the same proportion of respondents who report being the lowest category in both fear and anger, there are more who report being somewhat afraid than report being somewhat angry. This is offset by fewer individuals reporting high levels of fear. 
@@ -185,7 +190,7 @@ The t-test requires the following assumptions to be true.
 # Results
 
 ```{r binomial test, echo=TRUE} 
-test <- t.test(anes$new_voter ~ anes$emotions)
+test <- t.test(new_voter ~ emotions, data=anes)
 ```
 
 ```{r, echo=FALSE}
