@@ -111,7 +111,6 @@ The survey includes questions about how angry and how afraid respondents "feel a
 
 Because of the observational nature of the ANES data, we are not able to directly measure whether anger or fear *causes* voter turnout.  We can only check whether angry people or fearful people are more likely to increase their voting behavior.  Care must therefore be taken before drawing causal conclusions based on our results.
 
-Figure \@ref(fig:plots) plots the reported level of fear and the reported level of anger among those who did not vote in 2016. This data is further broken out by whether the individual voted in 2018.  A strong positive relationship between anger and fear can be seen in this figure.  Notably, the relationship does not differ substantially based on whether or not someone voted in 2018. 
 
 ```{r fear-anger, echo = FALSE, message=FALSE}
 fear_anger <- anes %>% 
@@ -170,9 +169,9 @@ more_angry_plot <- anes %>%
 describe_fear_anger | more_angry_plot 
 ```
 
-The next figure plots the marginal distributions of respondents' feelings of fear and anger. While there are about the same proportion of respondents who report being the lowest category in both fear and anger, there are more who report being somewhat afraid than report being somewhat angry. This is offset by fewer individuals reporting high levels of fear. 
+The left panel of Figure \@ref(fig:plots)  plots the marginal distributions of respondents' feelings of fear and anger. While there are about the same proportion of respondents who report being the lowest category in both fear and anger, there are more who report being somewhat afraid than report being somewhat angry. This is offset by fewer individuals reporting high levels of fear. 
 
-To compare the two emotions, we identify the respondents who are more angry than afraid, and the repondents who are more afraid than angry.  While it would be possible to retain more information by subtracting one measure from the other, this would innapropriately impose a metric structure on these ordinal variables.  We find that there are `r sum(anes$emotions == 'More Angry')` people in the more-anger group and `r sum(anes$emotions == 'More Afraid')` people in the more-fear group.  There are `r sum(is.na(anes$emotions))` people who did not specify a difference in emotions, which we cannot leverage for our test.  The size of these groups is plotted in the bottom-right panel of Figure \@ref(fig:plots).
+To compare the two emotions, we identify the respondents who are more angry than afraid, and the repondents who are more afraid than angry.  While it would be possible to retain more information by subtracting one measure from the other, this would innapropriately impose a metric structure on these ordinal variables.  We find that there are `r sum(anes$emotions == 'More Angry')` people in the more-anger group and `r sum(anes$emotions == 'More Afraid')` people in the more-fear group.  There are `r sum(is.na(anes$emotions))` people who did not specify a difference in emotions, which we cannot leverage for our test.  The right panel of Figure \@ref(fig:plots) shows the fraction of people in each group that went from not voting to voting.
 
 Both our grouping variable and our outcome variable are measured at the binary level.  In these circumstances, common tests could include a two-sample proportion test and Fischer's exact test.  We proceed with a two-sample t-test to demonstrate tools used in Datasci 203.  Given the large sample sizes, the loss of accuracy from the t-test will be negligible.  The null hypothesis for the t-test can be expressed as follows:
 
