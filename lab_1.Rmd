@@ -1,14 +1,11 @@
 ---
 title: 'Lab 1: Hypothesis Testing'
 author: "w203 Teaching Team"
-output:
-  pdf_document: default
+output: pdf_document
 ---
-# Overview
+This is a team-based lab.  Your instructor will divide you into teams of three, or possibly four students. To maximize learning, we would like all students to engage with every lab component, discussing strategy with teammates, reviewing solutions, and iterating on text and code.
 
-This is a team-based lab.  Your instructor will divide you into teams of three, or possibly four studetns. To maximize learning, we would like all students to engage with every lab component, discussing strategy with teammates, reviewing solutions, and iterating on text and code.
-
-The lab consists of two parts.  Part one consists of foundational exercises similar to a homework.  Part two is a written statistical analysis.
+The lab consists of two parts.  Part one consists of foundation exercises similar to a homework.  Part two is a written statistical analysis.
 
 This lab is due before your Unit 9 live session.  You will find a separate place on Gradescope to submit each part. Please submit your `.Rmd` file, as well as your `.pdf` file. This is a team submission, so one person from your team should submit the teams' work, and associate the other members of the team with the submission (this is intuitive on Gradescope.)
 
@@ -16,10 +13,9 @@ This lab is due before your Unit 9 live session.  You will find a separate place
 \newpage
 
 # Part 1: Foundational Exercises
-## Applied Practice
+## Profesional Magic 
 
-\begin{enumerate}
-  \item \textbf{Professional Magic.} Your aunt (who is a professional magician), claims to have created a pair of magical coins that share a  connection to each other that makes them land in the same way.  The coins are always flipped at the same time.  For a given flip $i \in \{1,2,3...\}$, let $X_i$ be a Bernoulli random variable representing the outcome of the first coin, and let $Y_i$ be a Bernoulli random variable representing the outcome of the second coin.  You assume that each flip of the pair is independent of all other flips of the pair.  You also assume that
+Your aunt (who is a professional magician), claims to have created a pair of magical coins that share a  connection to each other that makes them land in the same way.  The coins are always flipped at the same time.  For a given flip $i \in \{1,2,3...\}$, let $X_i$ be a Bernoulli random variable representing the outcome of the first coin, and let $Y_i$ be a Bernoulli random variable representing the outcome of the second coin.  You assume that each flip of the pair is independent of all other flips of the pair.  You also assume that
 
 $$P(X_i=0)= P(X_i = 1) = P(Y_i=0) = P(Y_i = 1) = 1/2,$$
 and write,
@@ -32,47 +28,45 @@ You design a test to evaluate your aunt's claim.  You flip the coins 3 times and
 
 Your null hypothesis is that $p=1/2$.  You plan to reject the null if your test statistic is 0 or 6.
 
-\begin{enumerate}
-  \item What is the type 1 error rate of your test?
-  \item What is the power of your test for the alternate hypothesis that $p=3/4$?
-\end{enumerate}
 
-\item \textbf{Wrong Test, Right Data.} Imagine that your organization surveys a set of customers to see how much they like your regular website, and how much they like your mobile website, both measured on 5-point Likert scales.  If you were to run a paired t-test, what consequences would the violation of the metric scale assumption have for your interpretation of the test results?
-\end{enumerate}
+1. What is the type 1 error rate of your test?
+2. What is the power of your test for the alternate hypothesis that $p=3/4$?
+
+## Wrong Test, Right Data
+Imagine that your organization surveys a set of customers to see how much they like your regular website, and how much they like your mobile website, both measured on 5-point Likert scales.  If you were to run a paired t-test, what consequences would the violation of the metric scale assumption have for your interpretation of the test results?
+
 
 ## Test Assumptions
-
 For the four following questions, your task is to evaluate the assumptions for the given test using your background knowledge and examining the data.  The test that we ask you to evaluate may or may not be the most appropriate test for the scenario.  Because the goal of this task is to evaluate whether the data satisfies the assumptions necessary for the test to provide meaningful results, you do not need perform the test (you may perform the test, but we will not be marking for the test results).
 
-\begin{enumerate}
-\item The file `datasets/Happiness\_WHR` is subsetted from the World Happiness Report, a yearly publication that uses data from the Gallup World Poll surveys.  The variable life ladder is a measure of happiness, described in the FAQ as follows: 
+### World Happiness 
+The file `datasets/Happiness_WHR` is subsetted from the World Happiness Report, a yearly publication that uses data from the Gallup World Poll surveys.  The variable life ladder is a measure of happiness, described in the FAQ as follows: 
 
-\begin{quote}
-  \textit{This is called the Cantril ladder: it asks respondents to think of a ladder, with the best possible life for them being a 10, and the worst possible life being a 0. They are then asked to rate their own current lives on that 0 to 10 scale. The rankings are from nationally representative samples, for the years 2018-2020.}
-\end{quote}
+> *This is called the Cantril ladder: it asks respondents to think of a ladder, with the best possible life for them being a 10, and the worst possible life being a 0. They are then asked to rate their own current lives on that 0 to 10 scale. The rankings are from nationally representative samples, for the years 2018-2020.*
+
 
 You would like to know whether people in countries with high GDP per capita (higher than the mean) are more happy or less happy than people in countries with low GDP (lower than the mean).
 
 List all assumptions for a two-sample t-test and evaluate them.
 
-\item The file `datasets/legislators-current.csv` is taken from the congress-legislators project on Github (https://github.com/unitedstates/congress-legislators).  You would like to test whether Democratic or Republican senators are older.
+### Legislator age
+The file `datasets/legislators-current.csv` is taken from the congress-legislators project on Github (https://github.com/unitedstates/congress-legislators).  You would like to test whether Democratic or Republican senators are older.
 
 List all assumptions for a Wilcoxon rank-sum test and evaluate them.
 
-\item The dataset `wine` can be accessed by installing the `wooldridge` package.  It contains observations of variables related to wine consumption for 21 countries.  You would like to use it to test whether countries have more deaths from heart disease or from liver disease.
+### Its for your health! 
+The dataset `wine` can be accessed by installing the `wooldridge` package.  It contains observations of variables related to wine consumption for 21 countries.  You would like to use it to test whether countries have more deaths from heart disease or from liver disease.
 
 List all assumptions for a signed-rank test and evaluate them.
 
-\item The file `datasets/GSS\_religion` is a subset of data from the 2004 General Social Survey (GSS).  The variables `prottemp` and `cathtemp` are measurements of how a respondent feels towards protestants and towards catholics, respectively.  The GSS questions are phrased as follows:
+### Positive vibes
+The file `./datasets/GSS_religion` is a subset of data from the 2004 General Social Survey (GSS).  The variables `prottemp` and `cathtemp` are measurements of how a respondent feels towards protestants and towards catholics, respectively.  The GSS questions are phrased as follows:
 
-\begin{quote}
-\textit{I'd like to get your feelings toward groups that are in the news these days. I will use something we call the feeling thermometer, and here is how it works: I'll read the names of a group and I'd like you to rate that group using the feeling thermometer. Ratings between 50 degrees and 100 degrees mean that you feel favorable and warm toward the group. Ratings between 0 degrees and 50 degrees mean that you don't feel favorable toward the group and that you don't care too much for that group. If we come to a group whose name you Don't recognize, you don't need to rate that group. Just tell me and we'll move on to the next one. IF you do recognize the name, but you don't feel particularly warm or cold toward the group, you would rate the group at the 50 degree mark. How would you rate this group using the thermometer?}
-\end{quote}
+> *I'd like to get your feelings toward groups that are in the news these days. I will use something we call the feeling thermometer, and here is how it works: I'll read the names of a group and I'd like you to rate that group using the feeling thermometer. Ratings between 50 degrees and 100 degrees mean that you feel favorable and warm toward the group. Ratings between 0 degrees and 50 degrees mean that you don't feel favorable toward the group and that you don't care too much for that group. If we come to a group whose name you Don't recognize, you don't need to rate that group. Just tell me and we'll move on to the next one. IF you do recognize the name, but you don't feel particularly warm or cold toward the group, you would rate the group at the 50 degree mark. How would you rate this group using the thermometer?*
 
 You would like to test whether the US population feels more positive towards Protestants or towards Catholics.
 
 List all assumptions for a paired t-test and evaluate them.
-\end{enumerate}
 
 \newpage
 # Part 2: Statistical Analysis
