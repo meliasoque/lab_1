@@ -13,14 +13,21 @@ This lab is due before your Unit 9 live session.  You will find a separate place
 \newpage
 
 # Part 1: Foundational Exercises
-## Profesional Magic 
+## Professional Magic 
 
-Your aunt (who is a professional magician), claims to have created a pair of magical coins that share a  connection to each other that makes them land in the same way.  The coins are always flipped at the same time.  For a given flip $i \in \{1,2,3...\}$, let $X_i$ be a Bernoulli random variable representing the outcome of the first coin, and let $Y_i$ be a Bernoulli random variable representing the outcome of the second coin.  You assume that each flip of the pair is independent of all other flips of the pair.  You also assume that
+Your aunt (who is a professional magician), claims to have created a pair of magical coins that share a  connection to each other that makes them land in the same way.  The coins are always flipped at the same time.  For a given flip $i \in \{1,2,3...\}$, let $X_i$ be a Bernoulli random variable representing the outcome of the first coin, and let $Y_i$ be a Bernoulli random variable representing the outcome of the second coin.  You assume that each flip of the pair is independent of all other flips of the pair. For all $i$, you also assume that $X_i$ and $Y_i$ have the joint distribution given in the following table.
 
-$$P(X_i=0)= P(X_i = 1) = P(Y_i=0) = P(Y_i = 1) = 1/2,$$
-and write,
+\begin{center}
+\begin{tabular}{ c | c | c }
+& $X_i = 0$ & $X_i=1$ \\
+\hline
+$Y_i = 0$ & $p/2$    & $(1-p)/2$ \\
+$Y_i = 1$ & $(1-p)/2$    & $p/2$ \\
+\end{tabular}
+\end{center}
 
-$$P(X_i = Y_i) = p.$$
+
+$p \in [0,1]$ is a parameter. 
 
 Your aunt claims that $p > 1/2$.
 
@@ -37,7 +44,7 @@ Imagine that your organization surveys a set of customers to see how much they l
 
 
 ## Test Assumptions
-For the four following questions, your task is to evaluate the assumptions for the given test using your background knowledge and examining the data.  The test that we ask you to evaluate may or may not be the most appropriate test for the scenario.  Because the goal of this task is to evaluate whether the data satisfies the assumptions necessary for the test to provide meaningful results, you do not need perform the test (you may perform the test, but we will not be marking for the test results).
+For the four following questions, your task is to evaluate the assumptions for the given test. It is not enough to say that an assumption is met or not met; instead, present your evidence in the form of background knowledge, visualizations, and numerical summaries. The test that we ask you to evaluate may or may not be the most appropriate test for the scenario.  Because the goal of this task is to evaluate whether the data satisfies the assumptions necessary for the test to provide meaningful results, you do not need perform the test (you may perform the test, but we will not be marking for the test results).
 
 ### World Happiness 
 The file `datasets/Happiness_WHR` is subsetted from the World Happiness Report, a yearly publication that uses data from the Gallup World Poll surveys.  The variable life ladder is a measure of happiness, described in the FAQ as follows: 
