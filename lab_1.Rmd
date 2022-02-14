@@ -5,7 +5,7 @@ output:
   pdf_document:
     toc: false
     number_sections: true
-    toc_depth: 3
+urlcolor: blue
 ---
 
 This is a team-based lab.  Your instructor will divide you into teams of three, or possibly four students. To maximize learning, we would like all students to engage with every lab component, discussing strategy with teammates, reviewing solutions, and iterating on text and code.
