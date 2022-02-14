@@ -3,35 +3,39 @@ title: 'Lab 1: Hypothesis Testing'
 author: "w203 Teaching Team"
 output:
   pdf_document:
-    toc: true
+    toc: false
     number_sections: true
     toc_depth: 3
 ---
 
+This is a team-based lab.  Your instructor will divide you into teams of three, or possibly four students. To maximize learning, we would like all students to engage with every lab component, discussing strategy with teammates, reviewing solutions, and iterating on text and code.
+
+The lab consists of two parts.  Part one consists of foundation exercises similar to a homework.  Part two is a written statistical analysis.
+
+This lab is due before your Unit 9 live session.  You will find a separate place on Gradescope to submit each part. Please submit your `.Rmd` file, as well as your `.pdf` file. This is a team submission, so one person from your team should submit the teams' work, and associate the other members of the team with the submission (this is intuitive on Gradescope.)
+
+\tableofcontents
 \newpage
 
 # Part 1: Foundational Exercises
-## Professional Magic
-Your aunt (who is a professional magician), claims to have created a pair of magical coins that share a  connection to each other that makes them land in the same way.  The coins are always flipped at the same time.  For a given flip $i \in \{1,2,3...\}$, let $X_i$ be a Bernoulli random variable that represents the outcome of the first coin, and let $Y_i$ be a Bernoulli random variable that represents the outcome of the second coin.  
+## Professional Magic 
+
+Your aunt (who is a professional magician), claims to have created a pair of magical coins that share a  connection to each other that makes them land in the same way.  The coins are always flipped at the same time.  For a given flip $i \in \{1,2,3...\}$, let $X_i$ be a Bernoulli random variable representing the outcome of the first coin, and let $Y_i$ be a Bernoulli random variable representing the outcome of the second coin.  You assume that each flip of the pair is independent of all other flips of the pair. For all $i$, you also assume that $X_i$ and $Y_i$ have the joint distribution given in the following table.
+
+\begin{center}
+\begin{tabular}{ c | c | c }
+& $X_i = 0$ & $X_i=1$ \\
+\hline
+$Y_i = 0$ & $p/2$    & $(1-p)/2$ \\
+$Y_i = 1$ & $(1-p)/2$    & $p/2$ \\
+\end{tabular}
+\end{center}
+
+$p \in [0,1]$ is a parameter. 
 
 Each flip of the pair is independent of all other flips of the pair. This means that whatever happens the first time that you flip both of the coins tells you nothing about the second time that you flip both of the coins, and so on. Essentially, this is a statement about the limits of your aunt's magic.
 
-You think you know a few things about coins. Namely, that you don't believe in magic, and that you believe that even *within* a pair of tosses, $X_{i}, Y_{i}$, that the outcomes of one coin are independent of the outcomes of the other. What is more, every coin you've ever seen has been a *fair* coin with an equal probability of both outcomes. 
-
-You can formalize, and clarify these beliefs by writing: 
-
-$$
-  P(X_i=0)= P(X_i = 1) = P(Y_i=0) = P(Y_i = 1) = 1/2
-$$
-and, 
-
-$$
-  P(X_i = Y_i) = p
-$$
-
-After you've written down your beliefs, you aunt who happens to be not only a magician, but also a statistician, claims that $p > 1/2$. 
-
-You design the following test to evaluate your aunt's claim:  You flip the coins three times, and write down that your test statistic is the sum $X_1 + Y_1 + X_2 + Y_2 + X_3 + Y_3$. That is, your test statistic is essentially the nubmer of heads that are shown. 
+You design the following test to evaluate your aunt's claim:  You flip the coins three times, and write down that your test statistic is the sum $X_1 + Y_1 + X_2 + Y_2 + X_3 + Y_3$. That is, your test statistic is essentially the number of heads that are shown. 
 
 Your null hypothesis is that $p=1/2$, and you plan to reject the null if your test statistic is 0 or 6. 
 
@@ -46,12 +50,14 @@ A Likert scale is one where a person is provided ordered categories that range f
 
 If you were to run a paired t-test using this data, what consequences would the violation of the metric scale assumption have for your interpretation of the test results? What would you propose to do to remedy this problem? 
 
+
 \newpage
 ## Test Assumptions
-For the following questions, your task is to evaluate the assumptions for the given test, using your background knowledge and examining the data.  The test may or may not be the most appropriate test for the scenario.  Do not perform the test.
+
+For the four following questions, your task is to evaluate the assumptions for the given test. It is not enough to say that an assumption is met or not met; instead, present your evidence in the form of background knowledge, visualizations, and numerical summaries. The test that we ask you to evaluate may or may not be the most appropriate test for the scenario.  Because the goal of this task is to evaluate whether the data satisfies the assumptions necessary for the test to provide meaningful results, you do not need perform the test (you may perform the test, but we will not be marking for the test results).
 
 ### World Happiness
-The file `datasets/Happiness\_WHR` is subsetted from the World Happiness Report, a yearly publication that uses data from the Gallup World Poll surveys.  The variable life ladder is a measure of happiness, described in the FAQ as follows: 
+The file [`datasets/Happiness_WHR.csv`](./datasets/happiness_WHR.csv) is subsetted from the World Happiness Report, a yearly publication that uses data from the Gallup World Poll surveys.  The variable life ladder is a measure of happiness, described in the FAQ as follows: 
 
 > This is called the Cantril ladder: it asks respondents to think of a ladder, with the best possible life for them being a 10, and the worst possible life being a 0. They are then asked to rate their own current lives on that 0 to 10 scale. The rankings are from nationally representative samples, for the years 2018-2020.
 
@@ -59,14 +65,10 @@ You would like to know whether people in countries with high GDP per capita (hig
 
 List all assumptions for a two-sample t-test. Then, provide your evaluation of whether this data satisfy these assumptions by reasoning about the sampling process, the measurement strategy, and the data distributions. 
 
-If the data satisfy the assumptions, conduct the test and report on both the statistical and practical significance that you observe.
-
 ### Legislators
-The file [`datasets/legislators-current.csv`](./datasets/legislators-current.csv) is taken from the congress-legislators project on Github (https://github.com/unitedstates/congress-legislators).  You would like to test whether Democratic or Republican senators are older.
+The file [`datasets/legislators-current.csv`](./datasets/legislators-current.csv) is taken from the [congress-legislators project](https://github.com/unitedstates/congress-legislators) on Github.  You would like to test whether Democratic or Republican senators are older.
 
 List all assumptions for a Wilcoxon rank-sum test. Then, provide your evaluation of whether this data satisfy these assumptions by reasoning about the sampling process, the measurement strategy, and the data distributions. 
-
-If the data satisfy the assumptions, conduct the test and report on both the statistical and practical significance that you observe.
 
 ### Wine and health
 The dataset `wine` can be accessed by installing the `wooldridge` package.  
@@ -80,8 +82,6 @@ It contains observations of variables related to wine consumption for 21 countri
 
 List all assumptions for a signed-rank test. Then, provide your evaluation of whether this data satisfy these assumptions by reasoning about the sampling process, the measurement strategy, and the data distributions. 
 
-If the data satisfy the assumptions, conduct the test and report on both the statistical and practical significance that you observe.
-
 ### Attitudes toward the religious
 The file [`datasets/GSS_religion`](./datasets/GSS_religion.csv) is a subset of data from the 2004 General Social Survey (GSS).  
 
@@ -91,13 +91,11 @@ The variables `prottemp` and `cathtemp` are measurements of how a respondent fee
 > 
 > I'll read the names of a group and I'd like you to rate that group using the feeling thermometer. Ratings between 50 degrees and 100 degrees mean that you feel favorable and warm toward the group. Ratings between 0 degrees and 50 degrees mean that you don't feel favorable toward the group and that you don't care too much for that group. If we come to a group whose name you Don't recognize, you don't need to rate that group. Just tell me and we'll move on to the next one. If you do recognize the name, but you don't feel particularly warm or cold toward the group, you would rate the group at the 50 degree mark. 
 > 
-> How would you rate this group using the thermometer?}
+> How would you rate this group using the thermometer?
 
 You would like to test whether the US population feels more positive towards Protestants or towards Catholics.
 
 List all assumptions for a paired t-test. Then, provide your evaluation of whether this data satisfy these assumptions by reasoning about the sampling process, the measurement strategy, and the data distributions. (If you produce a histogram to evaluate this data distribution consider the bin width (or widths) that best show important characteristics of the distribution.)
-
-If the data satisfy the assumptions, conduct the test and report on both the statistical and practical significance that you observe.
 
 \newpage
 # Part 2: Statistical Analysis
@@ -120,13 +118,13 @@ For a glimpse into some of the intricacies that go into the design of this study
 
 Like many modern surveys, the ANES includes survey weights, which are used to correct for differences between how frequently demographic groups appear in the sample compared to the US population (often ultimately relying on US census data). The survey weights make is possible to generalize from the sample of data to the population as a whole. These weights are beyond the scope of our class and you are not expected to utilize them. Even though what you learn might not generalize to the US population, if the data that you posses was generated by an i.i.d. sampling process, you still can learn about the individuals within the sample.
 
-## The Research Question
+## The research question
 
 Use the ANES data to address the following question:
 
 > Did people who think of themselves as Democratic voters or Republican voters experience more difficulty voting in the 2020 election?
 
-## Guidance From Political Scientists 
+## Guidance from political scientists 
 
 Political identification in the US is a complex phenomenon that is the topic of a large academic literature.  See `./background_literature/petrocik_2009.pdf` for some guidance about how stated political identity might not match with revealed political identity at the ballot box. 
 
@@ -135,11 +133,11 @@ As practical guidance:
 1. Is it reasonable to use the vote that someone cast to identify their party preference in this case? What if someone had so difficult a time voting that they did not cast a ballot? 
 2. Please treat individuals who "lean" in one direction or another as members of that party. This means that someone who "Leans Democratic" should be classified as as Democrat; and someone who "Leans Republican" should be classified as a Republican.
 
-## Report Guidelines
+## Report guidelines 
 
 This section provides some guidance for you as you write your report. In [`rubric.md`](./rubric.md) we provide you with specific statements of how we will evaluate your report.  
 
-## General Guidance {-}
+## General guidance {-}
 - You should knit an .Rmd file to create your pdf report.
 - Your report should be no more than 3 pages in standard latex formatting (i.e. `output: pdf_document`)
 - You should assume your reader is familiar with statistics, but has no special knowledge of the ANES survey.
@@ -161,7 +159,8 @@ How do you get from a research question to data?
 Only after you have informed your reader of what these concepts are can you then describe how you are going to _measure_ these concepts.
 
 - What would be the best **possible** method of measuring this concept? Is this method possible? Why or why not? 
-- What is the best **available** method of measuring this concept? Why have you opted to use this measurement instead of other possibilities? 
+- What is the best **available** method of measuring this concept? Why have you opted to use this measurement instead of other possibilities? Map the concept definitions that you have written down onto the variables that you are going to use. Describe, precisely, how the variables were generated, if they come from survey data, provide the text of the question that the respondent is reacting to, not the variable name. 
+- What, if any, changes have you made to the dataset from how it was provided? Why did you make those changes, how much data was affected, and what are the consequences for any estimates that you produce? 
   
 ## Visual Design {-}
 - Any plots or tables that you include must follow basic principles of visual design.
@@ -171,7 +170,7 @@ Only after you have informed your reader of what these concepts are can you then
 - Do not include any plot (or R output in general) that you do not discuss in your narrative.
 - The code that makes your plot/figure should be included in your report `.Rmd` file, but should not be shown in your final report. To accomplish this, you can use an `echo=FALSE` argument in the code chunk that produces the plot/figure.
 
-## Data Wrangling {-}
+## Data wrangling {-}
 To answer your research question, you will have to clean, tidy, and structure the data (A.K.A. wrangle). 
 
 - The code to wrangle data should be included with your deliverable somehow. If you choose to include it in your report `.Rmd` file, then it should not be shown in the PDF of your final report. To accomplish this, you can use an `echo=FALSE` argument for the code chunk that does the wrangling. 
@@ -179,7 +178,8 @@ To answer your research question, you will have to clean, tidy, and structure th
 - While we do not want to prohibit you from using additional tools for data manipulation, you should be able to complete this lab with no more than the base `stats` library, plus `dplyr` and `ggplot2` for data manipulation and plotting. Other tools within the tidyverse are available to use, but don't feel like you have to search them out. 
 - You will learn more by writing your own function than you would searching for a package that does one thing for your report.
 
-## Hypothesis Testing {-}
+
+## Hypothesis testing {-}
 To answer your research question, you will have to execute one of the statistical tests from the course.
 
 - The code that executes your test *should* be shown in your report, because it makes very clear the specific test that you're conducting.
@@ -191,4 +191,3 @@ To answer your research question, you will have to execute one of the statistica
 ## Test, results and interpretation {-}
 
 Please discuss whether any statistically significant results that you find are of *practical significance*. There are many ways to do this, but the best will provide your reader enough context to understand any measured differences in a scale appropriate to your variables. Explain the main takeaway of your analysis and how it relates to the broader context you identified in the introduction. 
-
