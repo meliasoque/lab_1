@@ -1,0 +1,27 @@
+---
+title: "Lab One, Part One"
+author: "PUT YOUR GROUP NAMES HERE"
+date: "PUT THE SUBMISSION DATE HERE"
+output:
+  pdf_document:
+    toc: true
+    number_sections: true
+    toc_depth: 3
+---
+
+# Part 1: Foundational Exercises
+## Professional Magic
+
+\newpage
+## Wrong Test, Right Data
+
+\newpage
+## Test Assumptions
+### World Happiness
+
+### Legislators
+
+### Wine and health
+
+### Attitudes toward the religious
+
