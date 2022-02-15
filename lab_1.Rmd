@@ -46,15 +46,14 @@ Your null hypothesis is that $p=1/2$, and you plan to reject the null if your te
 ## Wrong Test, Right Data
 Imagine that your organization surveys a set of customers to see how much they like your regular website, and how much they like your mobile website. Suppose that both of these preference statements are measured on 5-point Likert scales.
 
-A Likert scale is one where a person is provided ordered categories that range from lowest to highest. You can read more about them in this seminal research design text by [Fowler](https://www.amazon.com/Survey-Research-Methods-Applied-Social/dp/1452259003/ref=sr_1_2?crid=2YVDNQW6HX5BZ&keywords=fowler+survey+research+methods&qid=1644867641&sprefix=fowler+survey+%2Caps%2C166&sr=8-2), or the much briefer version on [Wikipedia](https://en.wikipedia.org/wiki/Likert_scale). 
-
+A Likert scale is one where a person is provided ordered categories that range from lowest to highest. You can read more about them in this seminal research design text by [Fowler](https://www.amazon.com/Survey-Research-Methods-Applied-Social/dp/1452259003/ref=sr_1_2?crid=2YVDNQW6HX5BZ&keywords=fowler+survey+research+methods&qid=1644867641&sprefix=fowler+survey+%2Caps%2C166&sr=8-2), or this brief [overview](https://www.simplypsychology.org/likert-scale.html). 
 If you were to run a paired t-test using this data, what consequences would the violation of the metric scale assumption have for your interpretation of the test results? What would you propose to do to remedy this problem? 
 
 
 \newpage
 ## Test Assumptions
 
-For the four following questions, your task is to evaluate the assumptions for the given test. It is not enough to say that an assumption is met or not met; instead, present your evidence in the form of background knowledge, visualizations, and numerical summaries. The test that we ask you to evaluate may or may not be the most appropriate test for the scenario.  Because the goal of this task is to evaluate whether the data satisfies the assumptions necessary for the test to provide meaningful results, you do not need perform the test (you may perform the test, but we will not be marking for the test results).
+For the four following questions, your task is to evaluate the assumptions for the given test. It is not enough to say that an assumption is met or not met; instead, present your evidence in the form of background knowledge, visualizations, and numerical summaries. If you produce a histogram as part of your evaluation, be sure to consider what the most appropriate bin width is. The test that we ask you to evaluate may or may not be the most appropriate test for the scenario.  Because the goal of this task is to evaluate whether the data satisfies the assumptions necessary for the test to provide meaningful results, you do not need perform the test (you may perform the test, but we will not be marking for the test results).
 
 ### World Happiness
 The file [`datasets/Happiness_WHR.csv`](./datasets/happiness_WHR.csv) is subsetted from the World Happiness Report, a yearly publication that uses data from the Gallup World Poll surveys.  The variable life ladder is a measure of happiness, described in the FAQ as follows: 
@@ -63,12 +62,12 @@ The file [`datasets/Happiness_WHR.csv`](./datasets/happiness_WHR.csv) is subsett
 
 You would like to know whether people in countries with high GDP per capita (higher than the mean) are more happy or less happy than people in countries with low GDP (lower than the mean).
 
-List all assumptions for a two-sample t-test. Then, provide your evaluation of whether this data satisfy these assumptions by reasoning about the sampling process, the measurement strategy, and the data distributions. 
+List all assumptions for a two-sample t-test. Then evaluate each assumption, presenting evidence based on your background knowledge, visualizations, and numerical summaries.
 
 ### Legislators
 The file [`datasets/legislators-current.csv`](./datasets/legislators-current.csv) is taken from the [congress-legislators project](https://github.com/unitedstates/congress-legislators) on Github.  You would like to test whether Democratic or Republican senators are older.
 
-List all assumptions for a Wilcoxon rank-sum test. Then, provide your evaluation of whether this data satisfy these assumptions by reasoning about the sampling process, the measurement strategy, and the data distributions. 
+List all assumptions for a Wilcoxon rank-sum test. Then evaluate each assumption, presenting evidence based on your background knowledge, visualizations, and numerical summaries.
 
 ### Wine and health
 The dataset `wine` can be accessed by installing the `wooldridge` package.  
@@ -80,7 +79,7 @@ The dataset `wine` can be accessed by installing the `wooldridge` package.
 
 It contains observations of variables related to wine consumption for 21 countries.  You would like to use this data to test whether countries have more deaths from heart disease or from liver disease.
 
-List all assumptions for a signed-rank test. Then, provide your evaluation of whether this data satisfy these assumptions by reasoning about the sampling process, the measurement strategy, and the data distributions. 
+List all assumptions for a signed-rank test. Then evaluate each assumption, presenting evidence based on your background knowledge, visualizations, and numerical summaries.
 
 ### Attitudes toward the religious
 The file [`datasets/GSS_religion`](./datasets/GSS_religion.csv) is a subset of data from the 2004 General Social Survey (GSS).  
@@ -95,7 +94,7 @@ The variables `prottemp` and `cathtemp` are measurements of how a respondent fee
 
 You would like to test whether the US population feels more positive towards Protestants or towards Catholics.
 
-List all assumptions for a paired t-test. Then, provide your evaluation of whether this data satisfy these assumptions by reasoning about the sampling process, the measurement strategy, and the data distributions. (If you produce a histogram to evaluate this data distribution consider the bin width (or widths) that best show important characteristics of the distribution.)
+List all assumptions for a paired t-test. Then evaluate each assumption, presenting evidence based on your background knowledge, visualizations, and numerical summaries. 
 
 \newpage
 # Part 2: Statistical Analysis
@@ -116,13 +115,13 @@ While you're at the ANES website, you will also want to download the codebook, b
 
 For a glimpse into some of the intricacies that go into the design of this study, take a look at the introduction to the codebook.  
 
-Like many modern surveys, the ANES includes survey weights, which are used to correct for differences between how frequently demographic groups appear in the sample compared to the US population (often ultimately relying on US census data). The survey weights make is possible to generalize from the sample of data to the population as a whole. These weights are beyond the scope of our class and you are not expected to utilize them. Even though what you learn might not generalize to the US population, if the data that you posses was generated by an i.i.d. sampling process, you still can learn about the individuals within the sample.
+Like many modern surveys, the ANES includes survey weights, which are used to correct for situations in which members of one demographic group are more likely to respond to the survey than members of another demographic group. (The target proportions are ultimately based on US census data). The survey weights make it possible to generalize from the a population that represents people who take the survey to a population that represents the United States as a whole. These weights are beyond the scope of our class and you are not expected to utilize them. You will still be able to learn about a population model, even if applicability to the US population is limited.
 
 ## The research question
 
 Use the ANES data to address the following question:
 
-> Did people who think of themselves as Democratic voters or Republican voters experience more difficulty voting in the 2020 election?
+> Did Democratic voters or Republican voters experience more difficulty voting in the 2020 election?
 
 ## Guidance from political scientists 
 
@@ -150,7 +149,7 @@ This section provides some guidance for you as you write your report. In [`rubri
 - The introduction must "do work," connecting the general topic to the specific techniques in the report.
 
 ## Conceptualization and Operationalization {-} 
-How do you get from a research question to data? 
+How do you get from a research question to data? First, ensure that the concepts in your question are clear.
 
 - Who or what is a voter? 
 - Who is a "Republican" and who is a "Democrat"? 
