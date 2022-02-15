@@ -125,7 +125,6 @@ fear_anger <- anes %>%
   filter(voted_2016 == 'Did not Vote') %>% 
   ggplot(aes(x = geangry, y = geafraid, color = voted_2018)) + 
   geom_jitter(alpha = 0.5) + 
-  stat_smooth(method = 'lm') + 
   labs(
     x = 'Anger', y = 'Fear', color = 'Voted in 2018?', 
     title = 'Fear & Anger Relationship') + 
