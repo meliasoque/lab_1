@@ -67,7 +67,7 @@ List all assumptions for a two-sample t-test. Then evaluate each assumption, pre
 ### Legislators
 The file [`datasets/legislators-current.csv`](./datasets/legislators-current.csv) is taken from the [congress-legislators project](https://github.com/unitedstates/congress-legislators) on Github.  You would like to test whether Democratic or Republican senators are older.
 
-List all assumptions for a Wilcoxon rank-sum test. Then evaluate each assumption, presenting evidence based on your background knowledge, visualizations, and numerical summaries.
+List all assumptions for a Wilcoxon rank-sum test (using the Hypothesis of Comparisons). Then evaluate each assumption, presenting evidence based on your background knowledge, visualizations, and numerical summaries.
 
 ### Wine and health
 The dataset `wine` can be accessed by installing the `wooldridge` package.  
