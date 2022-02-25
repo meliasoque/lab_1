@@ -148,7 +148,7 @@ fear_anger_joint <- anes %>%
   geom_col( aes( x=emotions, y=increase, fill = 'Increase'),
             width = 0.5,
             position = 'stack') +
-  geom_text(aes( x=emotions, y=increase, label = paste(formatC(100 * decrease,digits= 1, format = "f"),'%')),  hjust = 1, colour = "white") +
+  geom_text(aes( x=emotions, y=increase, label = paste(formatC(100 * increase,digits= 1, format = "f"),'%')),  hjust = 1, colour = "white") +
   geom_col( aes( x=emotions, y=-decrease, , fill = 'Decrease'),
             width = 0.5,
             position = 'stack') +
