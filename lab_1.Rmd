@@ -12,7 +12,7 @@ This is a team-based lab.  Your instructor will divide you into teams of three, 
 
 The lab consists of two parts.  Part one consists of foundation exercises similar to a homework.  Part two is a written statistical analysis.
 
-This lab is due before your Unit 9 live session.  You will find a separate place on Gradescope to submit each part. Please submit your `.Rmd` file, as well as your `.pdf` file. This is a team submission, so one person from your team should submit the teams' work, and associate the other members of the team with the submission (this is intuitive on Gradescope.)
+This lab is due June 28 at 2pm Berkeley time.  You will find a separate place on Gradescope to submit each part. Please submit your `.Rmd` file, as well as your `.pdf` file. This is a team submission, so one person from your team should submit the teams' work, and associate the other members of the team with the submission (this is intuitive on Gradescope.)
 
 \tableofcontents
 \newpage
@@ -140,7 +140,6 @@ This section provides some guidance for you as you write your report. In [`rubri
 - You should knit an .Rmd file to create your pdf report.
 - Your report should be no more than 3 pages in standard latex formatting (i.e. `output: pdf_document`)
 - You should assume your reader is familiar with statistics, but has no special knowledge of the ANES survey.
-- Follow the .Rmd template that we have created, using the prompts to guide you through the parts of an analysis.  Make sure you fill in each prompt with all information requested.
 - Your report should contain either a plot or a table that advances the argument. 
 
 ## Introduction {-}
