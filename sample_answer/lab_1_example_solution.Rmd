@@ -22,7 +22,6 @@ theme_set(theme_bw())
 
 options(tinytex.verbose = TRUE)
 knitr::opts_chunk$set(echo=FALSE, message=FALSE)
-
 ```
 
 ```{r load data}
@@ -68,13 +67,12 @@ nrow_valid2 <- nrow(anes)
 anes <- anes %>% 
   mutate(
     emotions = case_when(
-      geafraid < geangry  ~ 'More Anger', 
-      geafraid == geangry ~ 'Equal', 
-      geafraid > geangry  ~ 'More Fear'),
-    emotions = factor(emotions, levels = c('More Anger', 'Equal', 'More Fear')),
+      geafraid < geangry  ~ "More Anger", 
+      geafraid == geangry ~ "Equal", 
+      geafraid > geangry  ~ "More Fear"),
+    emotions = factor(emotions, levels = c("More Anger", "Equal", "More Fear")),
     voting_change = voted_2018 - voted_2016
   )
-
 ```
 
 # Importance and Context
@@ -103,11 +101,11 @@ As an alternative to our focus on voting increases, we considered directly compa
 summary_table <- anes %>% 
   mutate(
     print_vote_2016 = case_when(
-      voted_2016 ~ 'Voted 2016', 
-      !voted_2016 ~ 'Did not Vote 2016'), 
+      voted_2016 ~ "Voted 2016", 
+      !voted_2016 ~ "Did not Vote 2016"), 
     print_vote_2018 = case_when(
-      voted_2018 ~ 'Voted 2018', 
-      !voted_2018 ~ 'Did not Vote 2018')) %$% 
+      voted_2018 ~ "Voted 2018", 
+      !voted_2018 ~ "Did not Vote 2018")) %$% 
   prop.table(
     table(
       print_vote_2016, 
@@ -118,7 +116,7 @@ summary_table <- anes %>%
 kable(
   summary_table,
   digits = 2,
-  caption = 'Self-Reported Voting Behavior in 2016 and 2018', 
+  caption = "Self-Reported Voting Behavior in 2016 and 2018", 
   booktabs = TRUE, 
 )
 ```
@@ -127,45 +125,59 @@ The survey includes questions about how angry and how afraid respondents "feel a
 
 Because of the observational nature of the ANES data, we are not able to directly measure whether anger or fear *causes* voter turnout.  We can only check whether angry people or fearful people are more likely to increase their voting behavior.  Care must therefore be taken before drawing causal conclusions based on our results.
 
-
-
 ```{r fear-anger-joint}
 fear_anger_joint <- anes %>% 
   ggplot(aes(x = geangry, y = geafraid)) + 
   geom_jitter(alpha = 0.20) + 
   labs(
-    x = 'Anger', y = 'Fear', 
-    title = 'Fear & Anger Relationship') 
+    x = "Anger", y = "Fear", 
+    title = "Fear & Anger Relationship") 
 ```
 
 ```{r turnout-by-emotion}
-  turnout_by_emotion <- 
-  anes %>% 
+turnout_by_emotion <- anes %>% 
   select(voting_change, emotions) %>%
   group_by(emotions) %>% 
-  summarise(increase = mean(voting_change ==1), decrease = mean(voting_change==-1)) %>% 
+  summarise(
+    increase = mean(voting_change == 1), 
+    decrease = mean(voting_change == -1)) %>% 
   ggplot() + 
-  geom_col( aes( x=emotions, y=increase, fill = 'Increase'),
-            width = 0.5,
-            position = 'stack') +
-  geom_text(aes( x=emotions, y=increase, label = paste(formatC(100 * increase,digits= 1, format = "f"),'%')),  hjust = 1, colour = "white") +
-  geom_col( aes( x=emotions, y=-decrease, , fill = 'Decrease'),
-            width = 0.5,
-            position = 'stack') +
-geom_text(aes( x=emotions, y=-decrease, label = paste(formatC(100 * decrease,digits= 1, format = "f"),'%')),  hjust = -.1, colour = "white") +
-  annotate("text", x = 3.7, y = -.0008, label = "< Decrease   Increase >") +
-  expand_limits(x = 4) +
-  scale_y_continuous(limits = c(-.065, .065)) +
-  geom_hline(yintercept = 0) +
-  ylab('Fraction of Subjects') +
-  xlab(NULL)+
-  labs(fill="Voting Behavior") +
-  ggtitle('Changes in Voting Behavior')+
-  theme(legend.position = 'none') +
+  geom_col(
+    aes(
+      x=emotions, y=increase, 
+      fill = "Increase"),
+    width = 0.5,
+    position = "stack") +
+  geom_text(
+    aes(
+      x=emotions, y=increase, 
+      label=paste(formatC(100 * increase,digits=1, format="f"), "%")),  
+    hjust=1, 
+    colour="white") +
+  geom_col(
+    aes(
+      x=emotions, y=-decrease, 
+      fill="Decrease"),
+    width=0.5,
+    position="stack") +
+  geom_text(
+    aes(
+      x=emotions, y=-decrease, 
+      label=paste(formatC(100 * decrease,digits=1, format="f"), "%")),  
+    hjust=-.1, 
+    colour = "white") +
+  annotate("text", x=3.7, y=-0.0008, label="< Decrease   Increase >") +
+  geom_hline(yintercept=0) +
+  expand_limits(x=4) +
+  scale_y_continuous(limits=c(-.065, .065)) +
+  labs(
+    title="Changes in Voting Behavior", 
+    fill="Voting Behavior", 
+    x=NULL, 
+    y="Fraction of Subjects") +
+  theme(legend.position="none") +
   coord_flip()
 ```
-
-
 
 ```{r plots, fig.cap='Voter Emotions and Voter Turnout. The red series did not vote; the blue series did vote.', fig.pos='!b', fig.height = 3}
 (fear_anger_joint | turnout_by_emotion)
@@ -191,21 +203,21 @@ First, data must be generated via an i.i.d. process.  The ANES 2018 pilot uses a
 
 Second, the outcome variable must be measured on a metric scale. In our case, the presence of a voting increase is a binary variable. A binary variable qualifies as metric as there is only a single interval, which goes from zero to one.
 
-
 Finally, the data must be sufficiently normal so that the CLT produces convergence in distribution to a Gaussian distribution. The small number of new voters can be understood as a positive skew in our turnout variable (skewness = `r round(skewness(anes$voting_change == 1),2)`).  Nevertheless, the large sample size suggests that the sampling distribution of the statistic should be approximately normal via the Central Limit Theorem. 
 
 # Results
 
 ```{r t-test, echo=TRUE} 
-test <- anes %>% filter(emotions %in% c('More Anger', 'More Fear')) %>% 
-t.test(I(voting_change == 1) ~ emotions, data = .)
+test <- anes %>% 
+  filter(emotions %in% c("More Anger", "More Fear")) %$% 
+  t.test(voting_change == 1 ~ emotions)
 ```
 
 ```{r produce differences}
 differences <- anes %>% 
   filter(
-    voted_2016 == 'Did not Vote', 
-    voted_2018 == 'Voted', 
+    voted_2016 == "Did not Vote", 
+    voted_2018 == "Voted", 
     geangry != geafraid) %>% 
   summarise(
     more_angry = geangry > geafraid, 
@@ -214,7 +226,7 @@ differences <- anes %>%
 
 ```{r produce difference in new voter percentage}
 new_voters <- anes %>% 
-  filter(emotions %in% c('More Anger', 'More Fear')) %>% 
+  filter(emotions %in% c("More Anger", "More Fear")) %>% 
   group_by(emotions) %>% 
   summarise(percent =  round(mean(voting_change==1) * 100, 2))
 ```
