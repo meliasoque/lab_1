@@ -1,5 +1,5 @@
 ---
-title: "Fear and Anger as Motivators for Voter Turnout"
+title: "Fear and Loathing in America: Motivators for Voter Turnout"
 subtitle: "Datasci 203: An Example Statistical Analysis"
 author: "Paul Laskowski, Alex Hughes, and the 203 Teaching Team" 
 output:
