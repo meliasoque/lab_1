@@ -25,7 +25,7 @@ knitr::opts_chunk$set(echo=FALSE, message=FALSE)
 ```
 
 ```{r load data}
-anes <- read.csv('~/lab_1/sample_answer/data/model/anes_pilot.csv')
+anes <- read.csv('~/lab_1/sample_answer/data/model/anes_pilot_2018.csv')
 ```
 
 # Importance and Context
